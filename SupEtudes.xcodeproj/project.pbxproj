@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B023158188420D40099AD26 /* MROEcoleDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B023157188420D40099AD26 /* MROEcoleDetailsViewController.m */; };
 		8BAD8F7818605CA600F7BBED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAD8F7718605CA600F7BBED /* Foundation.framework */; };
 		8BAD8F7A18605CA600F7BBED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAD8F7918605CA600F7BBED /* CoreGraphics.framework */; };
 		8BAD8F7C18605CA600F7BBED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAD8F7B18605CA600F7BBED /* UIKit.framework */; };
@@ -22,6 +23,8 @@
 		8BAD8F9C18605CA700F7BBED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAD8F7B18605CA600F7BBED /* UIKit.framework */; };
 		8BAD8FA418605CA700F7BBED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8BAD8FA218605CA700F7BBED /* InfoPlist.strings */; };
 		8BAD8FA618605CA700F7BBED /* SupEtudesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAD8FA518605CA700F7BBED /* SupEtudesTests.m */; };
+		8BAD8FB51860A3E000F7BBED /* MROEcoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAD8FB41860A3E000F7BBED /* MROEcoleViewController.m */; };
+		8BAD8FBB1860A68400F7BBED /* MROSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAD8FBA1860A68400F7BBED /* MROSearchViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B023156188420D40099AD26 /* MROEcoleDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MROEcoleDetailsViewController.h; sourceTree = "<group>"; };
+		8B023157188420D40099AD26 /* MROEcoleDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MROEcoleDetailsViewController.m; sourceTree = "<group>"; };
 		8BAD8F7418605CA600F7BBED /* SupEtudes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SupEtudes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BAD8F7718605CA600F7BBED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8BAD8F7918605CA600F7BBED /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -55,6 +60,10 @@
 		8BAD8FA118605CA700F7BBED /* SupEtudesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SupEtudesTests-Info.plist"; sourceTree = "<group>"; };
 		8BAD8FA318605CA700F7BBED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8BAD8FA518605CA700F7BBED /* SupEtudesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SupEtudesTests.m; sourceTree = "<group>"; };
+		8BAD8FB31860A3E000F7BBED /* MROEcoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MROEcoleViewController.h; sourceTree = "<group>"; };
+		8BAD8FB41860A3E000F7BBED /* MROEcoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MROEcoleViewController.m; sourceTree = "<group>"; };
+		8BAD8FB91860A68400F7BBED /* MROSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MROSearchViewController.h; sourceTree = "<group>"; };
+		8BAD8FBA1860A68400F7BBED /* MROSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MROSearchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +90,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B0231551884200A0099AD26 /* EcoleDetails */ = {
+			isa = PBXGroup;
+			children = (
+				8B023156188420D40099AD26 /* MROEcoleDetailsViewController.h */,
+				8B023157188420D40099AD26 /* MROEcoleDetailsViewController.m */,
+			);
+			name = EcoleDetails;
+			sourceTree = "<group>";
+		};
+		8B6A0586188D799F00D31205 /* SelectEcole */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SelectEcole;
+			sourceTree = "<group>";
+		};
 		8BAD8F6B18605CA600F7BBED = {
 			isa = PBXGroup;
 			children = (
@@ -114,12 +139,11 @@
 		8BAD8F7D18605CA600F7BBED /* SupEtudes */ = {
 			isa = PBXGroup;
 			children = (
-				8BAD8F8618605CA600F7BBED /* MROAppDelegate.h */,
-				8BAD8F8718605CA600F7BBED /* MROAppDelegate.m */,
+				8BAD8FAF18605CBD00F7BBED /* Controllers */,
 				8BAD8F8918605CA600F7BBED /* Main_iPhone.storyboard */,
 				8BAD8F8C18605CA600F7BBED /* Main_iPad.storyboard */,
-				8BAD8F8F18605CA600F7BBED /* MROViewController.h */,
-				8BAD8F9018605CA700F7BBED /* MROViewController.m */,
+				8BAD8F8618605CA600F7BBED /* MROAppDelegate.h */,
+				8BAD8F8718605CA600F7BBED /* MROAppDelegate.m */,
 				8BAD8F9218605CA700F7BBED /* Images.xcassets */,
 				8BAD8F7E18605CA600F7BBED /* Supporting Files */,
 			);
@@ -153,6 +177,45 @@
 				8BAD8FA218605CA700F7BBED /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8BAD8FAF18605CBD00F7BBED /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8B6A0586188D799F00D31205 /* SelectEcole */,
+				8B0231551884200A0099AD26 /* EcoleDetails */,
+				8BAD8FB81860A66500F7BBED /* Search */,
+				8BAD8FB71860A3FC00F7BBED /* Ecole */,
+				8BAD8FB61860A3EB00F7BBED /* MainPage */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		8BAD8FB61860A3EB00F7BBED /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				8BAD8F8F18605CA600F7BBED /* MROViewController.h */,
+				8BAD8F9018605CA700F7BBED /* MROViewController.m */,
+			);
+			name = MainPage;
+			sourceTree = "<group>";
+		};
+		8BAD8FB71860A3FC00F7BBED /* Ecole */ = {
+			isa = PBXGroup;
+			children = (
+				8BAD8FB31860A3E000F7BBED /* MROEcoleViewController.h */,
+				8BAD8FB41860A3E000F7BBED /* MROEcoleViewController.m */,
+			);
+			name = Ecole;
+			sourceTree = "<group>";
+		};
+		8BAD8FB81860A66500F7BBED /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				8BAD8FB91860A68400F7BBED /* MROSearchViewController.h */,
+				8BAD8FBA1860A68400F7BBED /* MROSearchViewController.m */,
+			);
+			name = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +266,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Maxime Roch";
 				TargetAttributes = {
+					8BAD8F7318605CA600F7BBED = {
+						DevelopmentTeam = FM9K4MUC48;
+					};
 					8BAD8F9718605CA700F7BBED = {
 						TestTargetID = 8BAD8F7318605CA600F7BBED;
 					};
@@ -254,9 +320,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BAD8FB51860A3E000F7BBED /* MROEcoleViewController.m in Sources */,
+				8BAD8FBB1860A68400F7BBED /* MROSearchViewController.m in Sources */,
 				8BAD8F8418605CA600F7BBED /* main.m in Sources */,
 				8BAD8F9118605CA700F7BBED /* MROViewController.m in Sources */,
 				8BAD8F8818605CA600F7BBED /* MROAppDelegate.m in Sources */,
+				8B023158188420D40099AD26 /* MROEcoleDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,10 +462,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SupEtudes/SupEtudes-Prefix.pch";
 				INFOPLIST_FILE = "SupEtudes/SupEtudes-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -406,10 +478,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SupEtudes/SupEtudes-Prefix.pch";
 				INFOPLIST_FILE = "SupEtudes/SupEtudes-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -475,6 +550,7 @@
 				8BAD8FAB18605CA700F7BBED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8BAD8FAC18605CA700F7BBED /* Build configuration list for PBXNativeTarget "SupEtudesTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +559,7 @@
 				8BAD8FAE18605CA700F7BBED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,24 +1,25 @@
 //
-//  MROViewController.m
+//  MROEcoleDetailsViewController.m
 //  SupEtudes
 //
-//  Created by Developer on 17/12/13.
-//  Copyright (c) 2013 Maxime Roch. All rights reserved.
+//  Created by Developer on 13/01/14.
+//  Copyright (c) 2014 Maxime Roch. All rights reserved.
 //
 
-#import "MROViewController.h"
+#import "MROEcoleDetailsViewController.h"
 
-@interface MROViewController ()
+@interface MROEcoleDetailsViewController ()
 
 @end
 
-@implementation MROViewController
+@implementation MROEcoleDetailsViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //self.scrollView.contentSize =CGSizeMake(320, 600);
-	// Do any additional setup after loading the view, typically from a nib.
+    _ScrollView.contentSize =CGSizeMake(320, 600);
+    [_ScrollView setScrollEnabled:YES];
+	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -27,29 +28,32 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)addDomain:(id)sender {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Nouveau Domaine" message:@"Saisir le nom du domaine:" delegate:self cancelButtonTitle:@"Annuler"
-        otherButtonTitles:@"Enregistrer", nil];
-    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [alert show];
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if(buttonIndex == 1)
-    NSLog(@"Entered: %@",[[alertView textFieldAtIndex:0] text]);
-}
-
-
 ////////////////////////////////////////////
 // Gestion Table View -- Liste des domaines
 ///////////////////////////////////////////
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
+    return 2;
 }
+
+
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if(section == 0)
+    {
+        return @"Avantages";
+    }
+    else
+    {
+        return @"Inconvenients";
+    }
+}
+
+
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    static NSString *simpleTableIdentifier = @"Domain";
+    static NSString *simpleTableIdentifier = @"EcoleAI";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
@@ -63,14 +67,12 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    return 9;
 }
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%d",indexPath.row);
 }
-
-/////////////////////////////////////
-
 
 @end

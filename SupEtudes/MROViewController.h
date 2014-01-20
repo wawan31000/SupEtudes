@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MROViewController : UIViewController
+@interface MROViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@property (strong, nonatomic) IBOutlet UITableView *DomainTable;
 
+- (IBAction)addDomain:(id)sender;
 @end

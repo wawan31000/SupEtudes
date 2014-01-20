@@ -25,7 +25,7 @@
 		8BAD8FA618605CA700F7BBED /* SupEtudesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAD8FA518605CA700F7BBED /* SupEtudesTests.m */; };
 		8BAD8FB51860A3E000F7BBED /* MROEcoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAD8FB41860A3E000F7BBED /* MROEcoleViewController.m */; };
 		8BAD8FBB1860A68400F7BBED /* MROSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAD8FBA1860A68400F7BBED /* MROSearchViewController.m */; };
-		8BD63AB5188D858200D1AF74 /* Model.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 8BD63AB4188D858200D1AF74 /* Model.xcdatamodel */; };
+		8BD63ABB188D8B5000D1AF74 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8BD63AB9188D8B5000D1AF74 /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +65,7 @@
 		8BAD8FB41860A3E000F7BBED /* MROEcoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MROEcoleViewController.m; sourceTree = "<group>"; };
 		8BAD8FB91860A68400F7BBED /* MROSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MROSearchViewController.h; sourceTree = "<group>"; };
 		8BAD8FBA1860A68400F7BBED /* MROSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MROSearchViewController.m; sourceTree = "<group>"; };
-		8BD63AB4188D858200D1AF74 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; name = Model.xcdatamodel; path = SupEtudes.xcodeproj/Model.xcdatamodel; sourceTree = SOURCE_ROOT; };
+		8BD63ABA188D8B5000D1AF74 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,7 +224,7 @@
 		8BD63AB6188D86F900D1AF74 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8BD63AB4188D858200D1AF74 /* Model.xcdatamodel */,
+				8BD63AB9188D8B5000D1AF74 /* Model.xcdatamodeld */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -331,10 +331,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BD63AB5188D858200D1AF74 /* Model.xcdatamodel in Sources */,
 				8BAD8FB51860A3E000F7BBED /* MROEcoleViewController.m in Sources */,
 				8BAD8FBB1860A68400F7BBED /* MROSearchViewController.m in Sources */,
 				8BAD8F8418605CA600F7BBED /* main.m in Sources */,
+				8BD63ABB188D8B5000D1AF74 /* Model.xcdatamodeld in Sources */,
 				8BAD8F9118605CA700F7BBED /* MROViewController.m in Sources */,
 				8BAD8F8818605CA600F7BBED /* MROAppDelegate.m in Sources */,
 				8B023158188420D40099AD26 /* MROEcoleDetailsViewController.m in Sources */,
@@ -574,6 +574,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8BD63AB9188D8B5000D1AF74 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8BD63ABA188D8B5000D1AF74 /* Model.xcdatamodel */,
+			);
+			currentVersion = 8BD63ABA188D8B5000D1AF74 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8BAD8F6C18605CA600F7BBED /* Project object */;
 }

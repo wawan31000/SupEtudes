@@ -13,7 +13,8 @@
 {
     self = [super init];
     if (self) {
-        <#initializations#>
+        _adresse=newAdresse;
+        _ville=newVille;
     }
     return self;
 }

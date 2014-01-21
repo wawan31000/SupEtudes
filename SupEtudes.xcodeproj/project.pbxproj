@@ -140,6 +140,15 @@
 			name = ModifEcoleDetails;
 			sourceTree = "<group>";
 		};
+		8B6A0592188E725A00D31205 /* CoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				8B9E29F7188E6E3000C1A02F /* MROCoreDataManager.h */,
+				8B9E29F8188E6E3000C1A02F /* MROCoreDataManager.m */,
+			);
+			name = CoreDataManager;
+			sourceTree = "<group>";
+		};
 		8BAD8F6B18605CA600F7BBED = {
 			isa = PBXGroup;
 			children = (
@@ -258,9 +267,8 @@
 		8BD63AB6188D86F900D1AF74 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8B6A0592188E725A00D31205 /* CoreDataManager */,
 				8BD63AB9188D8B5000D1AF74 /* Model.xcdatamodeld */,
-				8B9E29F7188E6E3000C1A02F /* MROCoreDataManager.h */,
-				8B9E29F8188E6E3000C1A02F /* MROCoreDataManager.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";

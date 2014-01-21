@@ -7,6 +7,7 @@
 //
 
 #import "MROViewController.h"
+#include "MROCoreDataManager.h"
 
 @interface MROViewController ()
 
@@ -17,8 +18,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //self.scrollView.contentSize =CGSizeMake(320, 600);
-	// Do any additional setup after loading the view, typically from a nib.
+    MROCoreDataManager * _manager = [MROCoreDataManager sharedManager];
+    NSFetchRequest * fr = [NSFetchRequest fetchRequestWithEntityName:@"Domaine"];
+    NSArray * _domaines = [[_manager managedObjectContext]executeFetchRequest:fr error:nil];
 }
 
 - (void)didReceiveMemoryWarning

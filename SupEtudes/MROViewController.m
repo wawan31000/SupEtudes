@@ -43,6 +43,10 @@
         
         [d setName:[[alertView textFieldAtIndex:0] text]];
         [_manager saveContext];
+        NSFetchRequest * fr = [NSFetchRequest fetchRequestWithEntityName:@"Domaine"];
+        _domaines = [[_manager managedObjectContext]executeFetchRequest:fr error:nil];
+        [_DomainTable reloadData];
+        
     }
 }
 
@@ -69,12 +73,34 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    return [_domaines count];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%d",indexPath.row);
 }
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return YES if you want the specified item to be editable.
+    return YES;
+}
+
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+       NSManagedObject *managedObject = [_domaines objectAtIndex:[indexPath row]];
+        [[_manager managedObjectContext] deleteObject:managedObject];
+        [_manager saveContext];
+        NSFetchRequest * fr = [NSFetchRequest fetchRequestWithEntityName:@"Domaine"];
+        _domaines = [[_manager managedObjectContext]executeFetchRequest:fr error:nil];
+        [_DomainTable reloadData];
+    }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+}
+
 
 /////////////////////////////////////
 

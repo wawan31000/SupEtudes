@@ -1,22 +1,21 @@
 //
-//  MRODomaine.m
+//  MROEcole.m
 //  SupEtudes
 //
 //  Created by Developer on 21/01/14.
 //  Copyright (c) 2014 Maxime Roch. All rights reserved.
 //
 
-#import "MRODomaine.h"
+#import "MROEcole.h"
 
-@implementation MRODomaine
-
+@implementation MROEcole
 
 - (id)initWithName:(NSString *) newname
 {
     self = [super init];
-    if (self)  {
+    if (self) {
         _name = newname;
-        _ecoles = [[NSMutableArray alloc] init];
+        _domaines = [[NSMutableArray alloc] init];
     }
     return self;
 }

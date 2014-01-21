@@ -8,6 +8,7 @@
 
 #import "MROViewController.h"
 #include "MROCoreDataManager.h"
+#include "MRODomaine.h"
 
 @interface MROViewController ()
 
@@ -19,8 +20,17 @@
 {
     [super viewDidLoad];
     MROCoreDataManager * _manager = [MROCoreDataManager sharedManager];
+    NSManagedObjectModel *managedObjectModel = [_manager managedObjectModel];
+    NSEntityDescription *theEntity = [[managedObjectModel entitiesByName] objectForKey:@"Domaine"];
+    NSManagedObject *newObject = [[NSManagedObject alloc]initWithEntity:theEntity
+                                         insertIntoManagedObjectContext:[_manager managedObjectContext]];
+    MRODomaine * d = [NSEntityDescription insertNewObjectForEntityForName:@"Domaine"
+                                                inManagedObjectContext:[_manager managedObjectContext]];
+    [d setName:@"Informatique"];
+    [_manager saveContext];
     NSFetchRequest * fr = [NSFetchRequest fetchRequestWithEntityName:@"Domaine"];
     NSArray * _domaines = [[_manager managedObjectContext]executeFetchRequest:fr error:nil];
+    NSLog(@"count : %lu", _domaines.count);
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,7 +79,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"%d",indexPath.row);
+    NSLog(@"%ld",(long)indexPath.row);
 }
 
 /////////////////////////////////////

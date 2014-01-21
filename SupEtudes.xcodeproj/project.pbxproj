@@ -11,6 +11,7 @@
 		8B6A0589188D84DC00D31205 /* MROSelectEcoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A0588188D84DC00D31205 /* MROSelectEcoleViewController.m */; };
 		8B6A058D188D854500D31205 /* MROModifEcoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A058C188D854500D31205 /* MROModifEcoleViewController.m */; };
 		8B6A0591188D867400D31205 /* MROModifEcoleDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A0590188D867400D31205 /* MROModifEcoleDetailsViewController.m */; };
+		8B6A0595188E76AD00D31205 /* MRODomaine.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A0594188E76AD00D31205 /* MRODomaine.m */; };
 		8B9E29F9188E6E3000C1A02F /* MROCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9E29F8188E6E3000C1A02F /* MROCoreDataManager.m */; };
 		8BAD8F7818605CA600F7BBED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAD8F7718605CA600F7BBED /* Foundation.framework */; };
 		8BAD8F7A18605CA600F7BBED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAD8F7918605CA600F7BBED /* CoreGraphics.framework */; };
@@ -51,6 +52,8 @@
 		8B6A058C188D854500D31205 /* MROModifEcoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MROModifEcoleViewController.m; sourceTree = "<group>"; };
 		8B6A058F188D867400D31205 /* MROModifEcoleDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MROModifEcoleDetailsViewController.h; sourceTree = "<group>"; };
 		8B6A0590188D867400D31205 /* MROModifEcoleDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MROModifEcoleDetailsViewController.m; sourceTree = "<group>"; };
+		8B6A0593188E76AD00D31205 /* MRODomaine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRODomaine.h; sourceTree = "<group>"; };
+		8B6A0594188E76AD00D31205 /* MRODomaine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRODomaine.m; sourceTree = "<group>"; };
 		8B9E29F7188E6E3000C1A02F /* MROCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MROCoreDataManager.h; sourceTree = "<group>"; };
 		8B9E29F8188E6E3000C1A02F /* MROCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MROCoreDataManager.m; sourceTree = "<group>"; };
 		8BAD8F7418605CA600F7BBED /* SupEtudes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SupEtudes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +150,15 @@
 				8B9E29F8188E6E3000C1A02F /* MROCoreDataManager.m */,
 			);
 			name = CoreDataManager;
+			sourceTree = "<group>";
+		};
+		8B6A0596188E773400D31205 /* Domaine */ = {
+			isa = PBXGroup;
+			children = (
+				8B6A0593188E76AD00D31205 /* MRODomaine.h */,
+				8B6A0594188E76AD00D31205 /* MRODomaine.m */,
+			);
+			name = Domaine;
 			sourceTree = "<group>";
 		};
 		8BAD8F6B18605CA600F7BBED = {
@@ -267,6 +279,7 @@
 		8BD63AB6188D86F900D1AF74 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8B6A0596188E773400D31205 /* Domaine */,
 				8B6A0592188E725A00D31205 /* CoreDataManager */,
 				8BD63AB9188D8B5000D1AF74 /* Model.xcdatamodeld */,
 			);
@@ -377,6 +390,7 @@
 			files = (
 				8B6A0591188D867400D31205 /* MROModifEcoleDetailsViewController.m in Sources */,
 				8BAD8FB51860A3E000F7BBED /* MROEcoleViewController.m in Sources */,
+				8B6A0595188E76AD00D31205 /* MRODomaine.m in Sources */,
 				8BAD8FBB1860A68400F7BBED /* MROSearchViewController.m in Sources */,
 				8BAD8F8418605CA600F7BBED /* main.m in Sources */,
 				8BD63ABB188D8B5000D1AF74 /* Model.xcdatamodeld in Sources */,

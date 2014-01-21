@@ -98,7 +98,7 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
+    [(MROEcoleViewController *)[segue destinationViewController] setDomaine:(MRODomaine *)sender];
 }
 
 

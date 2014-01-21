@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MROCoreDataManager.h"
 #import "MRODomaine.h"
+#import "MROEcoleViewController.h"
 
 @interface MROViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *DomainTable;

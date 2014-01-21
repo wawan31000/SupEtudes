@@ -18,6 +18,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _manager = [MROCoreDataManager sharedManager];
+    NSFetchRequest * fr = [NSFetchRequest fetchRequestWithEntityName:@"Ecole"];
+    //[fr setPredicate:<#(NSPredicate *)#>]
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@" %@ IN domaines", _domaine];
+    [fr setPredicate:predicate];
+    _ecoles = [[_manager managedObjectContext]executeFetchRequest:fr error:nil];
+
 	// Do any additional setup after loading the view.
 }
 
@@ -45,7 +52,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    cell.textLabel.text = @"test";
+    cell.textLabel.text = [(MROEcole *)[_ecoles objectAtIndex:[indexPath row]] name];
     return cell;
     
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="12F45" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="12F45" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Avantages" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="informations" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Informations" inverseName="avantages" inverseEntity="Informations" syncable="YES"/>
@@ -14,7 +14,7 @@
         <relationship name="information" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Informations" inverseName="ecole" inverseEntity="Informations" syncable="YES"/>
         <relationship name="lieu" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lieu" inverseName="ecole" inverseEntity="Lieu" syncable="YES"/>
         <fetchedProperty name="fetchedProperty" optional="YES" syncable="YES">
-            <fetchRequest name="fetchedPropertyFetchRequest" entity="Ecole"/>
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Ecole" predicateString=""/>
         </fetchedProperty>
     </entity>
     <entity name="Inconvenients" syncable="YES">

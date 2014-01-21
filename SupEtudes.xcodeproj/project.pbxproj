@@ -14,6 +14,7 @@
 		8B6A0595188E76AD00D31205 /* MRODomaine.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A0594188E76AD00D31205 /* MRODomaine.m */; };
 		8B6A059A188E90E900D31205 /* MROEcole.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A0599188E90E900D31205 /* MROEcole.m */; };
 		8B9E29F9188E6E3000C1A02F /* MROCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9E29F8188E6E3000C1A02F /* MROCoreDataManager.m */; };
+		8B9E2A3F188E92B900C1A02F /* MROLieu.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9E2A3E188E92B900C1A02F /* MROLieu.m */; };
 		8BAD8F7818605CA600F7BBED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAD8F7718605CA600F7BBED /* Foundation.framework */; };
 		8BAD8F7A18605CA600F7BBED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAD8F7918605CA600F7BBED /* CoreGraphics.framework */; };
 		8BAD8F7C18605CA600F7BBED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAD8F7B18605CA600F7BBED /* UIKit.framework */; };
@@ -59,6 +60,8 @@
 		8B6A0599188E90E900D31205 /* MROEcole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MROEcole.m; sourceTree = "<group>"; };
 		8B9E29F7188E6E3000C1A02F /* MROCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MROCoreDataManager.h; sourceTree = "<group>"; };
 		8B9E29F8188E6E3000C1A02F /* MROCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MROCoreDataManager.m; sourceTree = "<group>"; };
+		8B9E2A3D188E92B900C1A02F /* MROLieu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MROLieu.h; sourceTree = "<group>"; };
+		8B9E2A3E188E92B900C1A02F /* MROLieu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MROLieu.m; sourceTree = "<group>"; };
 		8BAD8F7418605CA600F7BBED /* SupEtudes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SupEtudes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BAD8F7718605CA600F7BBED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8BAD8F7918605CA600F7BBED /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -171,6 +174,15 @@
 				8B6A0599188E90E900D31205 /* MROEcole.m */,
 			);
 			name = Ecole;
+			sourceTree = "<group>";
+		};
+		8B9E2A3C188E929700C1A02F /* Lieu */ = {
+			isa = PBXGroup;
+			children = (
+				8B9E2A3D188E92B900C1A02F /* MROLieu.h */,
+				8B9E2A3E188E92B900C1A02F /* MROLieu.m */,
+			);
+			name = Lieu;
 			sourceTree = "<group>";
 		};
 		8BAD8F6B18605CA600F7BBED = {
@@ -291,6 +303,7 @@
 		8BD63AB6188D86F900D1AF74 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8B9E2A3C188E929700C1A02F /* Lieu */,
 				8B6A0597188E90CF00D31205 /* Ecole */,
 				8B6A0596188E773400D31205 /* Domaine */,
 				8B6A0592188E725A00D31205 /* CoreDataManager */,
@@ -406,6 +419,7 @@
 				8B6A0595188E76AD00D31205 /* MRODomaine.m in Sources */,
 				8BAD8FBB1860A68400F7BBED /* MROSearchViewController.m in Sources */,
 				8BAD8F8418605CA600F7BBED /* main.m in Sources */,
+				8B9E2A3F188E92B900C1A02F /* MROLieu.m in Sources */,
 				8BD63ABB188D8B5000D1AF74 /* Model.xcdatamodeld in Sources */,
 				8B6A059A188E90E900D31205 /* MROEcole.m in Sources */,
 				8BAD8F9118605CA700F7BBED /* MROViewController.m in Sources */,

@@ -11,5 +11,6 @@
 @interface MROEcole : NSObject
 @property(strong,nonatomic) NSString * name;
 @property(strong, nonatomic) NSMutableArray * domaines;
+- (id)initWithName:(NSString *) newname;
 
 @end

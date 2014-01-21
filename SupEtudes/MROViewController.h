@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MROCoreDataManager.h"
+#import "MRODomaine.h"
 
 @interface MROViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *DomainTable;
-
+@property (strong, nonatomic) MROCoreDataManager *manager;
+@property (strong, nonatomic) NSArray * domaines;
 - (IBAction)addDomain:(id)sender;
 @end

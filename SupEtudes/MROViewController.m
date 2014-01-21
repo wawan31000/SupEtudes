@@ -7,8 +7,6 @@
 //
 
 #import "MROViewController.h"
-#include "MROCoreDataManager.h"
-#include "MRODomaine.h"
 
 @interface MROViewController ()
 
@@ -19,18 +17,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    MROCoreDataManager * _manager = [MROCoreDataManager sharedManager];
-    NSManagedObjectModel *managedObjectModel = [_manager managedObjectModel];
-    NSEntityDescription *theEntity = [[managedObjectModel entitiesByName] objectForKey:@"Domaine"];
-    NSManagedObject *newObject = [[NSManagedObject alloc]initWithEntity:theEntity
-                                         insertIntoManagedObjectContext:[_manager managedObjectContext]];
-    MRODomaine * d = [NSEntityDescription insertNewObjectForEntityForName:@"Domaine"
-                                                inManagedObjectContext:[_manager managedObjectContext]];
-    [d setName:@"Informatique"];
-    [_manager saveContext];
+    _manager = [MROCoreDataManager sharedManager];
     NSFetchRequest * fr = [NSFetchRequest fetchRequestWithEntityName:@"Domaine"];
-    NSArray * _domaines = [[_manager managedObjectContext]executeFetchRequest:fr error:nil];
-    NSLog(@"count : %lu", _domaines.count);
+    _domaines = [[_manager managedObjectContext]executeFetchRequest:fr error:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,7 +37,13 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if(buttonIndex == 1)
-    NSLog(@"Entered: %@",[[alertView textFieldAtIndex:0] text]);
+    {
+        MRODomaine * d = [NSEntityDescription insertNewObjectForEntityForName:@"Domaine"
+                                                       inManagedObjectContext:[_manager managedObjectContext]];
+        
+        [d setName:[[alertView textFieldAtIndex:0] text]];
+        [_manager saveContext];
+    }
 }
 
 
@@ -68,8 +63,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
-    
-    cell.textLabel.text = @"test";
+    cell.textLabel.text = [(MRODomaine *)[_domaines objectAtIndex:[indexPath row]] name];
     return cell;
     
 }
@@ -79,7 +73,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"%ld",(long)indexPath.row);
+    NSLog(@"%d",indexPath.row);
 }
 
 /////////////////////////////////////

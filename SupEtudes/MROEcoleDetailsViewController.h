@@ -9,6 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MROEcoleDetailsViewController : UIViewController
-@property (strong, nonatomic) IBOutlet UIScrollView *ScrollView;
 
 @end

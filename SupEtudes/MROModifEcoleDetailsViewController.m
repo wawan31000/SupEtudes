@@ -1,18 +1,20 @@
 //
-//  MROEcoleDetailsViewController.m
+//  MROModifEcoleDetailsViewController.m
 //  SupEtudes
 //
-//  Created by Developer on 13/01/14.
+//  Created by Developer on 20/01/14.
 //  Copyright (c) 2014 Maxime Roch. All rights reserved.
 //
 
-#import "MROEcoleDetailsViewController.h"
+#import "MROModifEcoleDetailsViewController.h"
 
-@interface MROEcoleDetailsViewController ()
+@interface MROModifEcoleDetailsViewController ()
 
 @end
 
-@implementation MROEcoleDetailsViewController
+@implementation MROModifEcoleDetailsViewController
+
+
 
 - (void)viewDidLoad
 {
@@ -25,6 +27,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 ////////////////////////////////////////////
 // Gestion Table View -- Liste des domaines
@@ -72,5 +75,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%d",indexPath.row);
 }
+
 
 @end

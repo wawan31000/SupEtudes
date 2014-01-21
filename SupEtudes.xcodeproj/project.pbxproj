@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8B023158188420D40099AD26 /* MROEcoleDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B023157188420D40099AD26 /* MROEcoleDetailsViewController.m */; };
+		8B6A0589188D84DC00D31205 /* MROSelectEcoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A0588188D84DC00D31205 /* MROSelectEcoleViewController.m */; };
+		8B6A058D188D854500D31205 /* MROModifEcoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A058C188D854500D31205 /* MROModifEcoleViewController.m */; };
+		8B6A0591188D867400D31205 /* MROModifEcoleDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A0590188D867400D31205 /* MROModifEcoleDetailsViewController.m */; };
 		8BAD8F7818605CA600F7BBED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAD8F7718605CA600F7BBED /* Foundation.framework */; };
 		8BAD8F7A18605CA600F7BBED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAD8F7918605CA600F7BBED /* CoreGraphics.framework */; };
 		8BAD8F7C18605CA600F7BBED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAD8F7B18605CA600F7BBED /* UIKit.framework */; };
@@ -40,6 +43,12 @@
 /* Begin PBXFileReference section */
 		8B023156188420D40099AD26 /* MROEcoleDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MROEcoleDetailsViewController.h; sourceTree = "<group>"; };
 		8B023157188420D40099AD26 /* MROEcoleDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MROEcoleDetailsViewController.m; sourceTree = "<group>"; };
+		8B6A0587188D84DC00D31205 /* MROSelectEcoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MROSelectEcoleViewController.h; sourceTree = "<group>"; };
+		8B6A0588188D84DC00D31205 /* MROSelectEcoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MROSelectEcoleViewController.m; sourceTree = "<group>"; };
+		8B6A058B188D854500D31205 /* MROModifEcoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MROModifEcoleViewController.h; sourceTree = "<group>"; };
+		8B6A058C188D854500D31205 /* MROModifEcoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MROModifEcoleViewController.m; sourceTree = "<group>"; };
+		8B6A058F188D867400D31205 /* MROModifEcoleDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MROModifEcoleDetailsViewController.h; sourceTree = "<group>"; };
+		8B6A0590188D867400D31205 /* MROModifEcoleDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MROModifEcoleDetailsViewController.m; sourceTree = "<group>"; };
 		8BAD8F7418605CA600F7BBED /* SupEtudes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SupEtudes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BAD8F7718605CA600F7BBED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8BAD8F7918605CA600F7BBED /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -102,8 +111,28 @@
 		8B6A0586188D799F00D31205 /* SelectEcole */ = {
 			isa = PBXGroup;
 			children = (
+				8B6A0587188D84DC00D31205 /* MROSelectEcoleViewController.h */,
+				8B6A0588188D84DC00D31205 /* MROSelectEcoleViewController.m */,
 			);
 			name = SelectEcole;
+			sourceTree = "<group>";
+		};
+		8B6A058A188D852200D31205 /* ModifEcole */ = {
+			isa = PBXGroup;
+			children = (
+				8B6A058B188D854500D31205 /* MROModifEcoleViewController.h */,
+				8B6A058C188D854500D31205 /* MROModifEcoleViewController.m */,
+			);
+			name = ModifEcole;
+			sourceTree = "<group>";
+		};
+		8B6A058E188D865600D31205 /* ModifEcoleDetails */ = {
+			isa = PBXGroup;
+			children = (
+				8B6A058F188D867400D31205 /* MROModifEcoleDetailsViewController.h */,
+				8B6A0590188D867400D31205 /* MROModifEcoleDetailsViewController.m */,
+			);
+			name = ModifEcoleDetails;
 			sourceTree = "<group>";
 		};
 		8BAD8F6B18605CA600F7BBED = {
@@ -182,6 +211,8 @@
 		8BAD8FAF18605CBD00F7BBED /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8B6A058E188D865600D31205 /* ModifEcoleDetails */,
+				8B6A058A188D852200D31205 /* ModifEcole */,
 				8B6A0586188D799F00D31205 /* SelectEcole */,
 				8B0231551884200A0099AD26 /* EcoleDetails */,
 				8BAD8FB81860A66500F7BBED /* Search */,
@@ -320,12 +351,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B6A0591188D867400D31205 /* MROModifEcoleDetailsViewController.m in Sources */,
 				8BAD8FB51860A3E000F7BBED /* MROEcoleViewController.m in Sources */,
 				8BAD8FBB1860A68400F7BBED /* MROSearchViewController.m in Sources */,
 				8BAD8F8418605CA600F7BBED /* main.m in Sources */,
 				8BAD8F9118605CA700F7BBED /* MROViewController.m in Sources */,
+				8B6A058D188D854500D31205 /* MROModifEcoleViewController.m in Sources */,
 				8BAD8F8818605CA600F7BBED /* MROAppDelegate.m in Sources */,
 				8B023158188420D40099AD26 /* MROEcoleDetailsViewController.m in Sources */,
+				8B6A0589188D84DC00D31205 /* MROSelectEcoleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

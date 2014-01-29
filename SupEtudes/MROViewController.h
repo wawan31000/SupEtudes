@@ -15,5 +15,6 @@
 @property (strong, nonatomic) IBOutlet UITableView *DomainTable;
 @property (strong, nonatomic) MROCoreDataManager *manager;
 @property (strong, nonatomic) NSArray * domaines;
+@property(strong,nonatomic) NSNumber * selectedrow;
 - (IBAction)addDomain:(id)sender;
 @end

@@ -77,6 +77,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    _selectedrow = [NSNumber numberWithInteger:[indexPath row]];
     NSLog(@"%d",indexPath.row);
 }
 
@@ -98,7 +99,7 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    [(MROEcoleViewController *)[segue destinationViewController] setDomaine:(MRODomaine *)sender];
+    [(MROEcoleViewController *)[segue destinationViewController] setDomaine:(MRODomaine *)[_domaines objectAtIndex:[_selectedrow integerValue]]];
 }
 
 

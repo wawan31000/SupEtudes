@@ -18,13 +18,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"%@",[_domaine name]);
     _manager = [MROCoreDataManager sharedManager];
     NSFetchRequest * fr = [NSFetchRequest fetchRequestWithEntityName:@"Ecole"];
     _ecoles = [[_manager managedObjectContext]executeFetchRequest:fr error:nil];
     for (MROEcole *object in _ecoles) {
-        if([[object domaines] containsObject:_domaine])
-        {
-            [_selectedEcoles addObject:object];
+        NSLog(@"Pour Ecole :%@",[object name]);
+        for (MRODomaine * d in [object domaines]) {
+            NSLog(@"domaines :%@",[d name]);
         }
     }
 
@@ -65,10 +66,12 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"%d",[indexPath row]);
 }
 
 /////////////////////////////////////
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+       [(MROSearchViewController *)[segue destinationViewController] setDomaine:_domaine];
+}
 
 @end

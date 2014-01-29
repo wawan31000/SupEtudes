@@ -59,7 +59,15 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"%d",indexPath.row);
+    //[(MROEcole *)[_ecoles objectAtIndex:[indexPath row]] domaines] addObject:_domaine];
+    NSLog(@"%@",[(MROEcole *)[_ecoles objectAtIndex:[indexPath row]] name]);
+    [[(MROEcole *)[_ecoles objectAtIndex:[indexPath row]] domaines] addObject:_domaine];
+    /*NSMutableArray * array = [[NSMutableArray alloc] init];
+    [array addObject:_domaine];*/
+    [[_ecoles objectAtIndex:[indexPath row]] setValue:[(MROEcole *)[_ecoles objectAtIndex:[indexPath row]]domaines] forKey:@"domaines"];
+    //MROEcole * d = [_ecoles objectAtIndex:[indexPath row]];
+    //[[d domaines] addObject:_domaine];
+    [_manager saveContext];
 }
 
 /////////////////////////////////////

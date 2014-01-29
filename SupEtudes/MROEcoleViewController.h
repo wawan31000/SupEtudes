@@ -10,6 +10,7 @@
 #import "MROEcole.h"
 #import "MROCoreDataManager.h"
 #import "MRODomaine.h"
+#import "MROSearchViewController.h"
 
 @interface MROEcoleViewController : UIViewController
 @property (strong, nonatomic) MROCoreDataManager *manager;

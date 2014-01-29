@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MROLieu.h"
 
 @interface MROEcole : NSObject
 @property(strong,nonatomic) NSString * name;
+@property(strong,nonatomic) NSString * tel;
+@property(strong,nonatomic) NSMutableArray * lieux;
 @property(strong, nonatomic) NSMutableArray * domaines;
-- (id)initWithName:(NSString *) newname;
+- (id)initWithName:(NSString *) newname andTel:(NSString *) newtel andLieu:(NSMutableArray *) lieux;
 
 @end

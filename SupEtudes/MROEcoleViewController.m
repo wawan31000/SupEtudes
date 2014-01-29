@@ -20,10 +20,13 @@
     [super viewDidLoad];
     _manager = [MROCoreDataManager sharedManager];
     NSFetchRequest * fr = [NSFetchRequest fetchRequestWithEntityName:@"Ecole"];
-    //[fr setPredicate:<#(NSPredicate *)#>]
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@" %@ IN domaines", _domaine];
-    [fr setPredicate:predicate];
     _ecoles = [[_manager managedObjectContext]executeFetchRequest:fr error:nil];
+    for (MROEcole *object in _ecoles) {
+        if([[object domaines] containsObject:_domaine])
+        {
+            [_selectedEcoles addObject:object];
+        }
+    }
 
 	// Do any additional setup after loading the view.
 }
@@ -52,13 +55,13 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    cell.textLabel.text = [(MROEcole *)[_ecoles objectAtIndex:[indexPath row]] name];
+    cell.textLabel.text = [(MROEcole *)[_selectedEcoles objectAtIndex:[indexPath row]] name];
     return cell;
     
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    return [_selectedEcoles count];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

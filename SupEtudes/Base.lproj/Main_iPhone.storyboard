@@ -352,7 +352,7 @@
         <scene sceneID="waS-B6-fh4">
             <objects>
                 <viewController id="20K-OY-OjP" customClass="MROModifEcoleViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="F7e-qS-uSq">
+                    <view key="view" contentMode="scaleToFill" id="F7e-qS-uSq" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -393,10 +393,25 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <connections>
+                            <action selector="onSaveEcole:" destination="20K-OY-OjP" eventType="valueChanged" id="lNn-xi-mu1"/>
+                            <action selector="onTouchControl:" destination="20K-OY-OjP" eventType="touchUpInside" id="RNn-HS-V5e"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="SDh-rk-fhW">
-                        <barButtonItem key="rightBarButtonItem" title="Enregistrer" id="t2e-Ab-zra"/>
+                        <barButtonItem key="rightBarButtonItem" title="Enregistrer" id="t2e-Ab-zra">
+                            <connections>
+                                <action selector="onSaveEcole:" destination="20K-OY-OjP" id="fzy-aX-i9L"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="adresse" destination="65X-vh-ruy" id="jzT-2K-aB6"/>
+                        <outlet property="cp" destination="5st-p2-Zsx" id="O2t-H6-zOG"/>
+                        <outlet property="name" destination="gVm-tE-NEt" id="TPo-fY-Vwg"/>
+                        <outlet property="tel" destination="tmG-eP-664" id="k6p-FR-6rV"/>
+                        <outlet property="ville" destination="nVX-a3-NZ2" id="mmt-we-lVg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LXw-Zm-i1k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

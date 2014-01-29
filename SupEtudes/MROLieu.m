@@ -9,12 +9,14 @@
 #import "MROLieu.h"
 
 @implementation MROLieu
-- (id)initWithAdresse:(NSString*) newAdresse andVille:(NSString*) newVille
+- (id)initWithAdresse:(NSString*) newAdresse andVille:(NSString*) newVille andCP:(NSString *)newCP
 {
     self = [super init];
     if (self) {
         _adresse=newAdresse;
         _ville=newVille;
+        _cp = newCP;
+        _ecoles = [[NSMutableArray alloc] init];
     }
     return self;
 }

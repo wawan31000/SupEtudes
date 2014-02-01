@@ -59,15 +59,16 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    //[(MROEcole *)[_ecoles objectAtIndex:[indexPath row]] domaines] addObject:_domaine];
-    NSLog(@"%@",[(MROEcole *)[_ecoles objectAtIndex:[indexPath row]] name]);
-    [[(MROEcole *)[_ecoles objectAtIndex:[indexPath row]] domaines] addObject:_domaine];
-    /*NSMutableArray * array = [[NSMutableArray alloc] init];
-    [array addObject:_domaine];*/
-    [[_ecoles objectAtIndex:[indexPath row]] setValue:[(MROEcole *)[_ecoles objectAtIndex:[indexPath row]]domaines] forKey:@"domaines"];
-    //MROEcole * d = [_ecoles objectAtIndex:[indexPath row]];
-    //[[d domaines] addObject:_domaine];
+    NSLog(@"domaine : %@",[_domaine name]);
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:[NSEntityDescription entityForName:@"Domaine" inManagedObjectContext:[_manager managedObjectContext]]];
+
+    NSPredicate *predicate = [NSPredicate predicateWithFormat: @"name = %@", [_domaine name]];
+    [request setPredicate:predicate];
+    MRODomaine * d = [[[_manager managedObjectContext]executeFetchRequest:request error:nil] firstObject];
+    [[d ecoles] addObject:(MROEcole *)[_ecoles objectAtIndex:[indexPath row]]];
     [_manager saveContext];
+    [[_manager managedObjectContext] save:nil];
 }
 
 /////////////////////////////////////

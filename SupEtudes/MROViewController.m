@@ -99,7 +99,7 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    [(MROEcoleViewController *)[segue destinationViewController] setDomaine:(MRODomaine *)[_domaines objectAtIndex:[_selectedrow integerValue]]];
+    [(MROEcoleViewController *)[segue destinationViewController] setDomaine:(MRODomaine *)[_domaines objectAtIndex:[[self.DomainTable indexPathForCell:sender] row]]];
 }
 
 

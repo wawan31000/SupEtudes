@@ -17,7 +17,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	[_name setText:_ecole.name];
+    [_tel setText:_ecole.tel];
+    [_lieu setText:[_ecole.lieu toString]];
 }
 
 - (void)didReceiveMemoryWarning

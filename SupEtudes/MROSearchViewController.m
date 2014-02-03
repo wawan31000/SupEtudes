@@ -73,6 +73,10 @@
 
 /////////////////////////////////////
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"MROEcoleDetailsViewController"]){
+        [(MROEcoleDetailsViewController *)[segue destinationViewController] setEcole:(MROEcole *)[_ecoles objectAtIndex:[[self.EcoleTable indexPathForCell:sender] row]]];}
+}
 
 
 @end

@@ -14,4 +14,5 @@
 @property(strong,nonatomic) NSString * cp;
 @property(strong,nonatomic) NSMutableArray * ecoles;
 - (id)initWithAdresse:(NSString*) newAdresse andVille:(NSString*) newVille andCP:(NSString *) newCP;
+-(NSString *)toString;
 @end

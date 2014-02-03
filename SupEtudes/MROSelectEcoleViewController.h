@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MROEcole.h"
 
 @interface MROSelectEcoleViewController : UIViewController
-
+@property (strong, nonatomic) IBOutlet UILabel *name;
+@property (strong, nonatomic) IBOutlet UILabel *lieu;
+@property (strong, nonatomic) IBOutlet UILabel *tel;
+@property(strong,nonatomic) MROEcole * ecole;
 @end

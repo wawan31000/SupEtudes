@@ -77,8 +77,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    _selectedrow = [NSNumber numberWithInteger:[indexPath row]];
-    NSLog(@"%d",indexPath.row);
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

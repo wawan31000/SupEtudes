@@ -12,8 +12,8 @@
 @interface MROEcole : NSObject
 @property(strong,nonatomic) NSString * name;
 @property(strong,nonatomic) NSString * tel;
-@property(strong,nonatomic) NSMutableArray * lieux;
+@property(strong,nonatomic) MROLieu * lieu;
 @property(strong, nonatomic) NSMutableArray * domaines;
-- (id)initWithName:(NSString *) newname andTel:(NSString *) newtel andLieu:(NSMutableArray *) lieux;
+- (id)initWithName:(NSString *) newname andTel:(NSString *) newtel andLieu:(MROLieu *) lieu;
 
 @end

@@ -48,7 +48,7 @@
                                                    inManagedObjectContext:[_manager managedObjectContext]];
     [d setName:[_name text]];
     [d setTel:[_tel text]];
-    [[d lieux]addObject:l];
+    [d setLieu:l];
     
     [_manager saveContext];
 }

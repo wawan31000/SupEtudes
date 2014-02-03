@@ -13,7 +13,7 @@
         <attribute name="tel" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="domaines" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Domaine" inverseName="ecoles" inverseEntity="Domaine" syncable="YES"/>
         <relationship name="information" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Informations" inverseName="ecole" inverseEntity="Informations" syncable="YES"/>
-        <relationship name="lieux" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lieu" inverseName="ecoles" inverseEntity="Lieu" syncable="YES"/>
+        <relationship name="lieu" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lieu" inverseName="ecoles" inverseEntity="Lieu" syncable="YES"/>
     </entity>
     <entity name="Inconvenients" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -29,7 +29,7 @@
         <attribute name="adresse" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cp" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="ville" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="ecoles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ecole" inverseName="lieux" inverseEntity="Ecole" syncable="YES"/>
+        <relationship name="ecoles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ecole" inverseName="lieu" inverseEntity="Ecole" syncable="YES"/>
     </entity>
     <elements>
         <element name="Avantages" positionX="-5285" positionY="12902" width="128" height="73"/>

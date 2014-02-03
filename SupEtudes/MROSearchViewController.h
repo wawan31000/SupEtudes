@@ -10,9 +10,11 @@
 #import "MROCoreDataManager.h"
 #import "MROEcole.h"
 #import "MRODomaine.h"
+#import "MROEcoleDetailsViewController.h"
 
 @interface MROSearchViewController : UIViewController
 @property (strong, nonatomic) MROCoreDataManager *manager;
 @property (strong, nonatomic) NSArray * ecoles;
+@property (strong, nonatomic) IBOutlet UITableView *EcoleTable;
 @property(strong,nonatomic) MRODomaine * domaine;
 @end

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MROEcole.h"
 
 @interface MROEcoleDetailsViewController : UIViewController
-
+@property(strong,nonatomic) MROEcole * ecole;
 @end

@@ -20,4 +20,8 @@
     }
     return self;
 }
+
+-(NSString *) toString{
+    return [NSString stringWithFormat:@"%@ \n %@, %@",_adresse,_cp,_ville];
+}
 @end

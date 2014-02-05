@@ -42,13 +42,13 @@
     [l setVille:[_ville text]];
     [l setCp:[_cp text]];
     
-    [_manager saveContext];
-    
     MROEcole * d = [NSEntityDescription insertNewObjectForEntityForName:@"Ecole"
-                                                   inManagedObjectContext:[_manager managedObjectContext]];
+                                                 inManagedObjectContext:[_manager managedObjectContext]];
     [d setName:[_name text]];
     [d setTel:[_tel text]];
     [d setLieu:l];
+    
+    NSLog(@"%@",d.lieu);
     
     [_manager saveContext];
 }

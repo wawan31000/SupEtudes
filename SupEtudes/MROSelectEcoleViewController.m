@@ -17,9 +17,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	[_name setText:_ecole.name];
-    [_tel setText:_ecole.tel];
-    [_lieu setText:[_ecole.lieu toString]];
+	[_name setText:(NSString *)_ecole.name];
+    [_tel setText:(NSString *)_ecole.tel];
+    [_adresse setText:[NSString stringWithFormat:@"%@ \n%@, %@",[(MROLieu *)_ecole.lieu adresse],[(MROLieu *)_ecole.lieu cp], [(MROLieu *)_ecole.lieu ville]]];
+   
 }
 
 - (void)didReceiveMemoryWarning

@@ -291,6 +291,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Sélectionner" id="Izp-VB-OOd"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="adresse" destination="gp6-B9-Zvm" id="JHV-g1-I2g"/>
                         <outlet property="lieu" destination="gp6-B9-Zvm" id="maO-Ao-sdG"/>
                         <outlet property="name" destination="7Ec-pT-MxN" id="WSu-40-fUR"/>
                         <outlet property="tel" destination="7F3-Sg-xoa" id="Oev-PE-W7c"/>
@@ -342,7 +343,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="ltu-SJ-qwi" kind="push" trigger="accessoryAction" id="UGk-OC-kXu"/>
+                                            <segue destination="ltu-SJ-qwi" kind="push" identifier="SelectEcole" trigger="accessoryAction" id="UGk-OC-kXu"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -364,7 +365,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="20K-OY-OjP" kind="push" id="Vjx-1F-eNG"/>
+                                    <segue destination="20K-OY-OjP" kind="push" identifier="ModifEcole" id="Vjx-1F-eNG"/>
                                 </connections>
                             </button>
                         </barButtonItem>

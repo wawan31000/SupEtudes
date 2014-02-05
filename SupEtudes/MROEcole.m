@@ -10,13 +10,13 @@
 
 @implementation MROEcole
 
-- (id)initWithName:(NSString *) newname andTel:(NSString *) newtel andLieu:(MROLieu *)lieu
+- (id)initWithName:(NSString *) newname andTel:(NSString *) newtel andLieu:(MROLieu *)newLieu
 {
     self = [super init];
     if (self) {
         _name = newname;
         _tel = newtel;
-        
+        _lieu = newLieu;
         _domaines = [[NSMutableArray alloc] init];
     }
     return self;

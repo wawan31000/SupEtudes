@@ -58,11 +58,15 @@
     return [_ecoles count];
 }
 
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
+    //[self performSegueWithIdentifier:@"SelectEcole" sender:self];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"domaine : %@",[_domaine name]);
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:[NSEntityDescription entityForName:@"Domaine" inManagedObjectContext:[_manager managedObjectContext]]];
-
+    
     NSPredicate *predicate = [NSPredicate predicateWithFormat: @"name = %@", [_domaine name]];
     [request setPredicate:predicate];
     MRODomaine * d = [[[_manager managedObjectContext]executeFetchRequest:request error:nil] firstObject];
@@ -71,11 +75,15 @@
     [[_manager managedObjectContext] save:nil];
 }
 
+
+
 /////////////////////////////////////
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if([segue.identifier isEqualToString:@"MROEcoleDetailsViewController"]){
-        [(MROEcoleDetailsViewController *)[segue destinationViewController] setEcole:(MROEcole *)[_ecoles objectAtIndex:[[self.EcoleTable indexPathForCell:sender] row]]];}
+    if([segue.identifier isEqualToString:@"SelectEcole"]){
+        [(MROEcoleDetailsViewController *)[segue destinationViewController] setEcole:(MROEcole *)[_ecoles objectAtIndex:[[self.EcoleTable indexPathForCell:sender] row]]];
+        NSLog(@"%@",(MROEcole *)[_ecoles objectAtIndex:[[self.EcoleTable indexPathForCell:sender] row]]);
+    }
 }
 
 

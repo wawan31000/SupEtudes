@@ -9,6 +9,7 @@
 #import "MROLieu.h"
 
 @implementation MROLieu
+
 - (id)initWithAdresse:(NSString*) newAdresse andVille:(NSString*) newVille andCP:(NSString *)newCP
 {
     self = [super init];
@@ -16,12 +17,8 @@
         _adresse=newAdresse;
         _ville=newVille;
         _cp = newCP;
-        _ecoles = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
--(NSString *) toString{
-    return [NSString stringWithFormat:@"%@ \n %@, %@",_adresse,_cp,_ville];
-}
 @end

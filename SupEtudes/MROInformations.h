@@ -11,6 +11,7 @@
 #import "MROInconvenients.h"
 
 @interface MROInformations : NSObject
+
 @property (nonatomic) int note;
 @property(strong,nonatomic) NSMutableArray * avantages;
 @property(strong,nonatomic) NSMutableArray * inconvenients;

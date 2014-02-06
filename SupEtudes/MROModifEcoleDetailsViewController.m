@@ -19,12 +19,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _manager = [MROCoreDataManager sharedManager];
     _typeInfo = [NSArray arrayWithObjects:@"Avantage",@"Inconvenient", nil];
-    NSSet * a = [_information.avantages copy];
-    _avantages = a.allObjects;
-    NSSet * i = [_information.inconvenients copy];
-    _inconvenients = i.allObjects;
-	// Do any additional setup after loading the view.
+    [self reloadInformation];
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,7 +64,13 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    cell.textLabel.text = @"test";
+    if(indexPath.section == 0){
+        cell.textLabel.text = [(MROAvantages *)[_avantages objectAtIndex:[indexPath row]] name] ;
+    }
+    else{
+        cell.textLabel.text = [(MROInconvenients *)[_inconvenients objectAtIndex:[indexPath row]] name] ;
+    }
+
     return cell;
     
 }
@@ -126,12 +129,63 @@
     return (NSString *)[_typeInfo objectAtIndex:row];
 }
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-    
+    _pwSelectedIndex = &row;
 }
 
 -(void)customIOS7dialogButtonTouchUpInside:(id)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    NSLog(@"Button Custom : %d",buttonIndex);
+    
+    if(buttonIndex == 1){
+        if([_pw selectedRowInComponent:0] == 0){
+            MROAvantages * er = [NSEntityDescription insertNewObjectForEntityForName:@"Avantages" inManagedObjectContext:[_manager managedObjectContext]];
+            [er setName:_infoName.text];
+            [er setInformation:_information];
+            
+        }
+        else
+        {
+            MROInconvenients * ite = [NSEntityDescription insertNewObjectForEntityForName:@"Inconvenients" inManagedObjectContext:[_manager managedObjectContext]];
+            [ite setName:_infoName.text];
+            
+            [ite setInformation:_information];
+        }
+        [_manager.managedObjectContext save:nil];
+        [self reloadInformation];
+        [_InformationTable reloadData];
+    }
     [alertView close];
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        if(indexPath.section == 0){
+        NSManagedObject *managedObject = [_avantages objectAtIndex:[indexPath row]];
+        [[_manager managedObjectContext] deleteObject:managedObject];
+        [_manager saveContext];
+        }
+        else{
+            NSManagedObject *managedObject = [_inconvenients objectAtIndex:[indexPath row]];
+            [[_manager managedObjectContext] deleteObject:managedObject];
+            [_manager saveContext];
+        }
+        [self reloadInformation];
+        [_InformationTable reloadData];
+    }
+}
+
+
+-(void)reloadInformation{
+    NSFetchRequest *requesta = [[NSFetchRequest alloc] init];
+    [requesta setEntity:[NSEntityDescription entityForName:@"Avantages" inManagedObjectContext:[_manager managedObjectContext]]];
+    
+    NSPredicate *predicatea = [NSPredicate predicateWithFormat: @"information = %@", _information];
+    [requesta setPredicate:predicatea];
+    _avantages = [[_manager managedObjectContext]executeFetchRequest:requesta error:nil];
+    
+    NSFetchRequest *requesti = [[NSFetchRequest alloc] init];
+    [requesti setEntity:[NSEntityDescription entityForName:@"Inconvenients" inManagedObjectContext:[_manager managedObjectContext]]];
+    
+    NSPredicate *predicatei = [NSPredicate predicateWithFormat: @"information = %@", _information];
+    [requesti setPredicate:predicatei];
+    _inconvenients = [[_manager managedObjectContext]executeFetchRequest:requesti error:nil];
+}
 @end

@@ -352,12 +352,12 @@
 		8BD63AB6188D86F900D1AF74 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8B9E2A40188E944200C1A02F /* Informations */,
 				8B9E2A44188E950500C1A02F /* Avantages */,
 				8B6A0592188E725A00D31205 /* CoreDataManager */,
 				8B6A0596188E773400D31205 /* Domaine */,
 				8B6A0597188E90CF00D31205 /* Ecole */,
 				8B9E2A45188E950D00C1A02F /* Inconvenients */,
-				8B9E2A40188E944200C1A02F /* Informations */,
 				8B9E2A3C188E929700C1A02F /* Lieu */,
 				8BD63AB9188D8B5000D1AF74 /* Model.xcdatamodeld */,
 			);

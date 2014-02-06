@@ -8,12 +8,15 @@
 
 #import "MROInconvenients.h"
 
+
 @implementation MROInconvenients
-- (id)initWithName:(NSString *) newName
+
+- (id)initWithName:(NSString *) newName AndInformation:(MROInformations *)info
 {
     self = [super init];
     if (self) {
         _name=newName;
+        _information = info;
     }
     return self;
 }

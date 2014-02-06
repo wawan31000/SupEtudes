@@ -7,8 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MROInformations.h"
 
+@class MROInformations;
 @interface MROInconvenients : NSObject
+
 @property (strong, nonatomic) NSString * name;
-- (id)initWithName:(NSString *) newName;
+@property (retain, nonatomic) MROInformations * information;
+
+- (id)initWithName:(NSString *) newName AndInformation:(MROInformations *)info;
 @end

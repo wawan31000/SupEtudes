@@ -32,6 +32,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    NSFetchRequest * fr = [NSFetchRequest fetchRequestWithEntityName:@"Ecole"];
+    _ecoles = [[_manager managedObjectContext]executeFetchRequest:fr error:nil];
+    [_EcoleTable reloadData];
+}
+
 ////////////////////////////////////////////
 // Gestion Table View -- Liste des domaines
 ///////////////////////////////////////////
@@ -63,7 +69,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"domaine : %@",[_domaine name]);
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:[NSEntityDescription entityForName:@"Domaine" inManagedObjectContext:[_manager managedObjectContext]]];
     
@@ -81,7 +86,8 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"SelectEcole"]){
-        [(MROEcoleDetailsViewController *)[segue destinationViewController] setEcole:(MROEcole *)[_ecoles objectAtIndex:[[self.EcoleTable indexPathForCell:sender] row]]];
+        [(MROSelectEcoleViewController *)[segue destinationViewController] setEcole:(MROEcole *)[_ecoles objectAtIndex:[[self.EcoleTable indexPathForCell:sender] row]]];
+        [(MROSelectEcoleViewController *)[segue destinationViewController] setDomaine:(MRODomaine *)_domaine];
     }
 }
 

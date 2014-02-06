@@ -7,8 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MROInformations.h"
+#import "MROCoreDataManager.h"
 
+@class MROInformations;
 @interface MROAvantages : NSObject
+
 @property (strong, nonatomic) NSString * name;
-- (id)initWithName:(NSString *) newName;
+@property (nonatomic,retain) MROInformations * information;
+
+- (id)initWithName:(NSString *) newName AndInformation:(MROInformations *)info;
 @end

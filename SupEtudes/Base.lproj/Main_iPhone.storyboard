@@ -53,10 +53,10 @@
             </objects>
             <point key="canvasLocation" x="271" y="39"/>
         </scene>
-        <!--Ecole View Controller-->
+        <!--Ecole View Controller - Ecole-->
         <scene sceneID="amO-i0-F3g">
             <objects>
-                <viewController id="bGK-o7-xqc" customClass="MROEcoleViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EcoleViewController" id="bGK-o7-xqc" customClass="MROEcoleViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LfI-Dy-Smq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -86,7 +86,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Aj2-Sj-rDw">
+                    <navigationItem key="navigationItem" title="Ecole" id="Aj2-Sj-rDw">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="fej-L4-AAY">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="OkC-zU-JoZ">
                                 <rect key="frame" x="282" y="11" width="22" height="22"/>
@@ -109,7 +109,7 @@
             </objects>
             <point key="canvasLocation" x="697" y="39"/>
         </scene>
-        <!--Ecole Details View Controller-->
+        <!--Ecole Details View Controller - Détails Ecole-->
         <scene sceneID="fn8-IW-nfC">
             <objects>
                 <viewController id="Afb-HL-uVU" customClass="MROEcoleDetailsViewController" sceneMemberID="viewController">
@@ -202,7 +202,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="iwa-dD-5Py">
+                    <navigationItem key="navigationItem" title="Détails Ecole" id="iwa-dD-5Py">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="rIX-0m-86d">
                             <connections>
                                 <segue destination="VvW-Z0-KWm" kind="push" id="ncf-we-mkZ"/>
@@ -210,6 +210,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="InformationTable" destination="b4d-Tz-Kgt" id="Wz8-rJ-qDX"/>
                         <outlet property="adresse" destination="7pD-dx-NUw" id="oYY-8u-IQR"/>
                         <outlet property="name" destination="5wN-Ed-UYA" id="7Sl-sZ-El7"/>
                         <outlet property="tel" destination="3dh-0p-1rE" id="tqg-5P-DDY"/>
@@ -219,7 +220,7 @@
             </objects>
             <point key="canvasLocation" x="1245" y="39"/>
         </scene>
-        <!--Modif Ecole Details View Controller-->
+        <!--Modif Ecole Details View Controller - Edit Informations-->
         <scene sceneID="Ppw-aU-W55">
             <objects>
                 <viewController id="VvW-Z0-KWm" customClass="MROModifEcoleDetailsViewController" sceneMemberID="viewController">
@@ -252,7 +253,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="Ssb-Gj-ZXX">
+                    <navigationItem key="navigationItem" title="Edit Informations" id="Ssb-Gj-ZXX">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="gSs-9a-Hkh">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="hfx-Oh-jmR">
                                 <rect key="frame" x="282" y="11" width="22" height="22"/>
@@ -276,7 +277,7 @@
             </objects>
             <point key="canvasLocation" x="1676" y="39"/>
         </scene>
-        <!--Select Ecole View Controller-->
+        <!--Select Ecole View Controller - NomEcole-->
         <scene sceneID="NlC-0L-WzJ">
             <objects>
                 <viewController id="ltu-SJ-qwi" customClass="MROSelectEcoleViewController" sceneMemberID="viewController">
@@ -333,8 +334,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="wMy-za-F96">
-                        <barButtonItem key="rightBarButtonItem" title="Sélectionner" id="Izp-VB-OOd"/>
+                    <navigationItem key="navigationItem" title="NomEcole" id="wMy-za-F96">
+                        <barButtonItem key="rightBarButtonItem" title="Sélectionner" id="Izp-VB-OOd">
+                            <connections>
+                                <action selector="onSelect:" destination="ltu-SJ-qwi" id="qri-2q-5Ec"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="adresse" destination="gp6-B9-Zvm" id="JHV-g1-I2g"/>
@@ -424,7 +429,7 @@
             </objects>
             <point key="canvasLocation" x="1226" y="-1209"/>
         </scene>
-        <!--Modif Ecole View Controller-->
+        <!--Modif Ecole View Controller - Edit Ecole-->
         <scene sceneID="waS-B6-fh4">
             <objects>
                 <viewController id="20K-OY-OjP" customClass="MROModifEcoleViewController" sceneMemberID="viewController">
@@ -474,7 +479,7 @@
                             <action selector="onTouchControl:" destination="20K-OY-OjP" eventType="touchUpInside" id="RNn-HS-V5e"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="SDh-rk-fhW">
+                    <navigationItem key="navigationItem" title="Edit Ecole" id="SDh-rk-fhW">
                         <barButtonItem key="rightBarButtonItem" title="Enregistrer" id="t2e-Ab-zra">
                             <connections>
                                 <action selector="onSaveEcole:" destination="20K-OY-OjP" id="fzy-aX-i9L"/>

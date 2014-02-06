@@ -11,7 +11,10 @@
 #import "MROAvantages.h"
 #import "MROInconvenients.h"
 #import "CustomIOS7AlertView.h"
+#import "MROCoreDataManager.h"
+
 @interface MROModifEcoleDetailsViewController : UIViewController<UIPickerViewDataSource,UIPickerViewDelegate,CustomIOS7AlertViewDelegate>
+@property (strong, nonatomic) MROCoreDataManager *manager;
 @property (strong, nonatomic) IBOutlet UITableView *InformationTable;
 @property(strong,nonatomic) MROInformations * information;
 @property(strong,nonatomic) NSArray * avantages;
@@ -19,5 +22,7 @@
 @property(strong,nonatomic)NSArray * typeInfo;
 @property(strong,nonatomic)UITextField *infoName;
 @property(strong,nonatomic)UIPickerView *pw;
+@property(nonatomic) NSInteger *pwSelectedIndex;
 - (IBAction)AddInformation:(id)sender;
+-(void)reloadInformation;
 @end

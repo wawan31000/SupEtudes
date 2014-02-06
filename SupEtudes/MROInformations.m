@@ -9,6 +9,7 @@
 #import "MROInformations.h"
 
 @implementation MROInformations
+
 - (id)initWithNote:(int) newNote
 {
     self = [super init];

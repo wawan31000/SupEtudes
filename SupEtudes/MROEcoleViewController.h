@@ -18,4 +18,5 @@
 @property(strong,nonatomic)NSArray * selectedEcoles;
 @property (strong, nonatomic) IBOutlet UITableView *EcoleTable;
 @property (strong, nonatomic) MRODomaine * domaine;
+-(void) reloadEcole;
 @end

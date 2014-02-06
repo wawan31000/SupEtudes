@@ -12,7 +12,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tel" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="domaines" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Domaine" inverseName="ecoles" inverseEntity="Domaine" syncable="YES"/>
-        <relationship name="information" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Informations" inverseName="ecole" inverseEntity="Informations" syncable="YES"/>
+        <relationship name="information" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Informations" inverseName="ecole" inverseEntity="Informations" syncable="YES"/>
         <relationship name="lieu" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lieu" inverseName="ecole" inverseEntity="Lieu" syncable="YES"/>
     </entity>
     <entity name="Inconvenients" syncable="YES">

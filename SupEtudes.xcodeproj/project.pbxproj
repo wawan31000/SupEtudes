@@ -35,6 +35,7 @@
 		8BAD8FA618605CA700F7BBED /* SupEtudesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAD8FA518605CA700F7BBED /* SupEtudesTests.m */; };
 		8BAD8FB51860A3E000F7BBED /* MROEcoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAD8FB41860A3E000F7BBED /* MROEcoleViewController.m */; };
 		8BAD8FBB1860A68400F7BBED /* MROSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAD8FBA1860A68400F7BBED /* MROSearchViewController.m */; };
+		8BB9D3EB18A30ACA00771187 /* CustomIOS7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB9D3EA18A30ACA00771187 /* CustomIOS7AlertView.m */; };
 		8BD63ABB188D8B5000D1AF74 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8BD63AB9188D8B5000D1AF74 /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +96,8 @@
 		8BAD8FB41860A3E000F7BBED /* MROEcoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MROEcoleViewController.m; sourceTree = "<group>"; };
 		8BAD8FB91860A68400F7BBED /* MROSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MROSearchViewController.h; sourceTree = "<group>"; };
 		8BAD8FBA1860A68400F7BBED /* MROSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MROSearchViewController.m; sourceTree = "<group>"; };
+		8BB9D3E918A30ACA00771187 /* CustomIOS7AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomIOS7AlertView.h; path = "../../../Downloads/ios-custom-alertview-master/CustomIOS7AlertView/CustomIOS7AlertView/View/CustomIOS7AlertView.h"; sourceTree = "<group>"; };
+		8BB9D3EA18A30ACA00771187 /* CustomIOS7AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomIOS7AlertView.m; path = "../../../Downloads/ios-custom-alertview-master/CustomIOS7AlertView/CustomIOS7AlertView/View/CustomIOS7AlertView.m"; sourceTree = "<group>"; };
 		8BD63ABA188D8B5000D1AF74 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -254,6 +257,7 @@
 		8BAD8F7D18605CA600F7BBED /* SupEtudes */ = {
 			isa = PBXGroup;
 			children = (
+				8BB9D3E818A30A8500771187 /* IOSCustomAlertView */,
 				8BD63AB6188D86F900D1AF74 /* Model */,
 				8BAD8FAF18605CBD00F7BBED /* Controllers */,
 				8BAD8F8918605CA600F7BBED /* Main_iPhone.storyboard */,
@@ -334,6 +338,15 @@
 				8BAD8FBA1860A68400F7BBED /* MROSearchViewController.m */,
 			);
 			name = Search;
+			sourceTree = "<group>";
+		};
+		8BB9D3E818A30A8500771187 /* IOSCustomAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				8BB9D3E918A30ACA00771187 /* CustomIOS7AlertView.h */,
+				8BB9D3EA18A30ACA00771187 /* CustomIOS7AlertView.m */,
+			);
+			name = IOSCustomAlertView;
 			sourceTree = "<group>";
 		};
 		8BD63AB6188D86F900D1AF74 /* Model */ = {
@@ -453,6 +466,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BB9D3EB18A30ACA00771187 /* CustomIOS7AlertView.m in Sources */,
 				8B6A0591188D867400D31205 /* MROModifEcoleDetailsViewController.m in Sources */,
 				8BAD8FB51860A3E000F7BBED /* MROEcoleViewController.m in Sources */,
 				8B6A0595188E76AD00D31205 /* MRODomaine.m in Sources */,

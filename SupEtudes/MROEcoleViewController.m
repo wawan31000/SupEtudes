@@ -27,6 +27,8 @@
     [request setPredicate:predicate];
     _domaineinmanager = [[[_manager managedObjectContext]executeFetchRequest:request error:nil] firstObject];
     NSLog(@"count ecole : %d", [[_domaineinmanager ecoles] count]);
+    NSSet * a = [[_domaineinmanager ecoles] copy];
+    _selectedEcoles = a.allObjects;
 	// Do any additional setup after loading the view.
 }
 
@@ -55,12 +57,11 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    NSSet * a = [[_domaineinmanager ecoles] copy];
-    NSArray *array = a.allObjects;
+    
     //NSLog(@"test name : %@", [[array objectAtIndex:0] name]);
 
     
-    cell.textLabel.text = [(MROEcole *)[array objectAtIndex:[indexPath row]] name];
+    cell.textLabel.text = [(MROEcole *)[_selectedEcoles objectAtIndex:[indexPath row]] name];
     //cell.textLabel.text = @"test";
     return cell;
     
@@ -76,7 +77,10 @@
 /////////////////////////////////////
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"Search"])
        [(MROSearchViewController *)[segue destinationViewController] setDomaine:_domaineinmanager];
+    if([segue.identifier isEqualToString:@"EcoleDetails"])
+        [(MROEcoleDetailsViewController *)[segue destinationViewController] setEcole:(MROEcole *)[_selectedEcoles objectAtIndex:[[self.EcoleTable indexPathForCell:sender] row]]];
 }
 
 @end

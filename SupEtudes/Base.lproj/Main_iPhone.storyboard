@@ -74,7 +74,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Afb-HL-uVU" kind="push" id="lxG-SD-lNo"/>
+                                            <segue destination="Afb-HL-uVU" kind="push" identifier="EcoleDetails" id="lxG-SD-lNo"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -96,11 +96,14 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="aaC-I0-8dy" kind="push" id="ju1-Mq-f5P"/>
+                                    <segue destination="aaC-I0-8dy" kind="push" identifier="Search" id="ju1-Mq-f5P"/>
                                 </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="EcoleTable" destination="ja2-Mk-fll" id="DWl-DD-DFr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G0r-iL-ltf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -119,7 +122,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="gyv-Yh-o9b">
-                                    <rect key="frame" x="0.0" y="64" width="320" height="215"/>
+                                    <rect key="frame" x="0.0" y="64" width="320" height="243"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="aDm-3d-vle">
@@ -128,24 +131,45 @@
                                             <color key="backgroundColor" red="0.23735991910000001" green="0.49499980580000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="688-JO-9Db">
-                                            <rect key="frame" x="20" y="133" width="42" height="21"/>
+                                            <rect key="frame" x="20" y="122" width="42" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.042936004260000001" green="0.4916861542" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adresse" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ehe-cu-gh6">
-                                            <rect key="frame" x="20" y="156" width="65" height="21"/>
+                                            <rect key="frame" x="20" y="158" width="65" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.042936004260000001" green="0.4916861542" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Téléphone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E0D-6v-2gP">
-                                            <rect key="frame" x="20" y="180" width="65" height="21"/>
+                                            <rect key="frame" x="20" y="207" width="65" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.042936004260000001" green="0.4916861542" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3dh-0p-1rE">
+                                            <rect key="frame" x="22" y="222" width="278" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5wN-Ed-UYA">
+                                            <rect key="frame" x="22" y="139" width="287" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7pD-dx-NUw">
+                                            <rect key="frame" x="22" y="173" width="278" height="36"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -153,7 +177,7 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EcoleAI" textLabel="jdK-yS-sfR" style="IBUITableViewCellStyleDefault" id="SDu-zf-Jhx">
-                                        <rect key="frame" x="0.0" y="334" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="362" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SDu-zf-Jhx" id="cV9-nU-xxl">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -185,6 +209,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="adresse" destination="7pD-dx-NUw" id="oYY-8u-IQR"/>
+                        <outlet property="name" destination="5wN-Ed-UYA" id="7Sl-sZ-El7"/>
+                        <outlet property="tel" destination="3dh-0p-1rE" id="tqg-5P-DDY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zf5-BZ-szr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -223,8 +252,25 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="Ssb-Gj-ZXX"/>
+                    <navigationItem key="navigationItem" id="Ssb-Gj-ZXX">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="gSs-9a-Hkh">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="hfx-Oh-jmR">
+                                <rect key="frame" x="282" y="11" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="AddInformation:" destination="VvW-Z0-KWm" eventType="touchUpInside" id="DkI-2s-AjH"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="InformationTable" destination="yaH-Yf-VqE" id="seO-0a-OPC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3r2-Zk-JPR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

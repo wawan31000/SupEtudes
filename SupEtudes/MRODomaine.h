@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MROInformations.h"
 
 @interface MRODomaine : NSObject
 @property (strong, nonatomic) NSString * name;

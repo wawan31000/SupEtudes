@@ -12,7 +12,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tel" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="domaines" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Domaine" inverseName="ecoles" inverseEntity="Domaine" syncable="YES"/>
-        <relationship name="information" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Informations" inverseName="ecole" inverseEntity="Informations" syncable="YES"/>
+        <relationship name="informations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Informations" inverseName="ecole" inverseEntity="Informations" syncable="YES"/>
         <relationship name="lieu" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lieu" inverseName="ecole" inverseEntity="Lieu" syncable="YES"/>
     </entity>
     <entity name="Inconvenients" syncable="YES">
@@ -22,7 +22,8 @@
     <entity name="Informations" syncable="YES">
         <attribute name="note" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <relationship name="avantages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Avantages" inverseName="information" inverseEntity="Avantages" syncable="YES"/>
-        <relationship name="ecole" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ecole" inverseName="information" inverseEntity="Ecole" syncable="YES"/>
+        <relationship name="domaine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Domaine" syncable="YES"/>
+        <relationship name="ecole" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ecole" inverseName="informations" inverseEntity="Ecole" syncable="YES"/>
         <relationship name="inconvenients" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Inconvenients" inverseName="information" inverseEntity="Inconvenients" syncable="YES"/>
     </entity>
     <entity name="Lieu" syncable="YES">
@@ -36,7 +37,7 @@
         <element name="Domaine" positionX="-5760" positionY="12510" width="128" height="73"/>
         <element name="Ecole" positionX="-5319" positionY="12466" width="128" height="118"/>
         <element name="Inconvenients" positionX="-5744" positionY="12897" width="128" height="73"/>
-        <element name="Informations" positionX="-5526" positionY="12746" width="128" height="103"/>
+        <element name="Informations" positionX="-5526" positionY="12746" width="128" height="118"/>
         <element name="Lieu" positionX="-5006" positionY="12482" width="128" height="103"/>
     </elements>
 </model>

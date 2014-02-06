@@ -75,8 +75,10 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"Search"])
        [(MROSearchViewController *)[segue destinationViewController] setDomaine:_domaineinmanager];
-    if([segue.identifier isEqualToString:@"EcoleDetails"])
+    if([segue.identifier isEqualToString:@"EcoleDetails"]){
         [(MROEcoleDetailsViewController *)[segue destinationViewController] setEcole:(MROEcole *)[_selectedEcoles objectAtIndex:[[self.EcoleTable indexPathForCell:sender] row]]];
+        [(MROEcoleDetailsViewController *)[segue destinationViewController] setDomaine:(MRODomaine *)_domaineinmanager];
+    }
 }
 
 -(void)reloadEcole{

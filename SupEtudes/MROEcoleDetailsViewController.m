@@ -21,6 +21,12 @@
 	// Do any additional setup after loading the view.
     [_name setText:(NSString *)_ecole.name];
     [_tel setText:(NSString *)_ecole.tel];
+    for (MROInformations * info in _ecole.informations) {
+       if(info.domaine == _domaine)
+       {
+           _information = info;
+       }
+    }
     [_adresse setText:[NSString stringWithFormat:@"%@ \n%@, %@",[(MROLieu *)_ecole.lieu adresse],[(MROLieu *)_ecole.lieu cp], [(MROLieu *)_ecole.lieu ville]]];
     
     [self reloadInformation];
@@ -95,21 +101,21 @@
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    [(MROModifEcoleDetailsViewController *)segue.destinationViewController setInformation:_ecole.information];
+    [(MROModifEcoleDetailsViewController *)segue.destinationViewController setInformation:_information];
 }
 
 -(void)reloadInformation{
     NSFetchRequest *requesta = [[NSFetchRequest alloc] init];
     [requesta setEntity:[NSEntityDescription entityForName:@"Avantages" inManagedObjectContext:[_manager managedObjectContext]]];
     
-    NSPredicate *predicatea = [NSPredicate predicateWithFormat: @"information = %@", _ecole.information];
+    NSPredicate *predicatea = [NSPredicate predicateWithFormat: @"information = %@", _information];
     [requesta setPredicate:predicatea];
     _avantages = [[_manager managedObjectContext]executeFetchRequest:requesta error:nil];
     
     NSFetchRequest *requesti = [[NSFetchRequest alloc] init];
     [requesti setEntity:[NSEntityDescription entityForName:@"Inconvenients" inManagedObjectContext:[_manager managedObjectContext]]];
     
-    NSPredicate *predicatei = [NSPredicate predicateWithFormat: @"information = %@", _ecole.information];
+    NSPredicate *predicatei = [NSPredicate predicateWithFormat: @"information = %@", _information];
     [requesti setPredicate:predicatei];
     _inconvenients = [[_manager managedObjectContext]executeFetchRequest:requesti error:nil];
 }

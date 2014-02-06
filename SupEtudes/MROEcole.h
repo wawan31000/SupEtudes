@@ -15,7 +15,7 @@
 @property(strong,nonatomic) NSString * tel;
 @property(strong,nonatomic) MROLieu * lieu;
 @property(strong, nonatomic) NSMutableArray * domaines;
-@property(strong,nonatomic) MROInformations * information;
+@property(strong,nonatomic) NSMutableArray * informations;
 - (id)initWithName:(NSString *) newname andTel:(NSString *) newtel andLieu:(MROLieu *) newlieu;
 
 @end

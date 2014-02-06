@@ -10,6 +10,8 @@
 #import "MROEcole.h"
 #import "MROModifEcoleDetailsViewController.h"
 #import "MROCoreDataManager.h"
+#import "MRODomaine.h"
+#import "MROInformations.h"
 
 @interface MROEcoleDetailsViewController : UIViewController
 @property(strong,nonatomic) MROCoreDataManager* manager;
@@ -19,6 +21,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *tel;
 @property(strong,nonatomic) NSArray * avantages;
 @property(strong,nonatomic) NSArray * inconvenients;
+@property(strong,nonatomic) MROInformations * information;
+@property(strong,nonatomic) MRODomaine * domaine;
 @property (strong, nonatomic) IBOutlet UITableView *InformationTable;
 -(void)reloadInformation;
 @end

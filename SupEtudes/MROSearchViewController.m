@@ -76,6 +76,9 @@
     [request setPredicate:predicate];
     MRODomaine * d = [[[_manager managedObjectContext]executeFetchRequest:request error:nil] firstObject];
     [[d ecoles] addObject:(MROEcole *)[_ecoles objectAtIndex:[indexPath row]]];
+    MROInformations * e = [NSEntityDescription insertNewObjectForEntityForName:@"Informations" inManagedObjectContext:[_manager managedObjectContext]];
+    [e setDomaine:_domaine];
+    [[[_ecoles objectAtIndex:[indexPath row]] informations] addObject:e];
     [_manager saveContext];
     [[_manager managedObjectContext] save:nil];
 }

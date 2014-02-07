@@ -28,6 +28,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    NSFetchRequest * fr = [NSFetchRequest fetchRequestWithEntityName:@"Domaine"];
+    _domaines = [[_manager managedObjectContext]executeFetchRequest:fr error:nil];
+    [_manager saveContext];
+    [_DomainTable reloadData];
+}
+
 - (IBAction)addDomain:(id)sender {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Nouveau Domaine" message:@"Saisir le nom du domaine:" delegate:self cancelButtonTitle:@"Annuler"
         otherButtonTitles:@"Enregistrer", nil];

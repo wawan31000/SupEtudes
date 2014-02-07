@@ -37,6 +37,7 @@
 		8BAD8FBB1860A68400F7BBED /* MROSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAD8FBA1860A68400F7BBED /* MROSearchViewController.m */; };
 		8BB9D3EB18A30ACA00771187 /* CustomIOS7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB9D3EA18A30ACA00771187 /* CustomIOS7AlertView.m */; };
 		8BD63ABB188D8B5000D1AF74 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8BD63AB9188D8B5000D1AF74 /* Model.xcdatamodeld */; };
+		8BE1255818A4F78C00254635 /* MROAMEcoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE1255718A4F78C00254635 /* MROAMEcoleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,8 @@
 		8BB9D3E918A30ACA00771187 /* CustomIOS7AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomIOS7AlertView.h; path = "../../../Downloads/ios-custom-alertview-master/CustomIOS7AlertView/CustomIOS7AlertView/View/CustomIOS7AlertView.h"; sourceTree = "<group>"; };
 		8BB9D3EA18A30ACA00771187 /* CustomIOS7AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomIOS7AlertView.m; path = "../../../Downloads/ios-custom-alertview-master/CustomIOS7AlertView/CustomIOS7AlertView/View/CustomIOS7AlertView.m"; sourceTree = "<group>"; };
 		8BD63ABA188D8B5000D1AF74 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		8BE1255618A4F78C00254635 /* MROAMEcoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MROAMEcoleViewController.h; sourceTree = "<group>"; };
+		8BE1255718A4F78C00254635 /* MROAMEcoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MROAMEcoleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +305,7 @@
 		8BAD8FAF18605CBD00F7BBED /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8BE1255918A4F7B400254635 /* AMEcole */,
 				8B6A058E188D865600D31205 /* ModifEcoleDetails */,
 				8B6A058A188D852200D31205 /* ModifEcole */,
 				8B6A0586188D799F00D31205 /* SelectEcole */,
@@ -362,6 +366,15 @@
 				8BD63AB9188D8B5000D1AF74 /* Model.xcdatamodeld */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		8BE1255918A4F7B400254635 /* AMEcole */ = {
+			isa = PBXGroup;
+			children = (
+				8BE1255618A4F78C00254635 /* MROAMEcoleViewController.h */,
+				8BE1255718A4F78C00254635 /* MROAMEcoleViewController.m */,
+			);
+			name = AMEcole;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -477,6 +490,7 @@
 				8B9E2A4B188E95B400C1A02F /* MROAvantages.m in Sources */,
 				8BD63ABB188D8B5000D1AF74 /* Model.xcdatamodeld in Sources */,
 				8B6A059A188E90E900D31205 /* MROEcole.m in Sources */,
+				8BE1255818A4F78C00254635 /* MROAMEcoleViewController.m in Sources */,
 				8BAD8F9118605CA700F7BBED /* MROViewController.m in Sources */,
 				8B6A058D188D854500D31205 /* MROModifEcoleViewController.m in Sources */,
 				8BAD8F8818605CA600F7BBED /* MROAppDelegate.m in Sources */,

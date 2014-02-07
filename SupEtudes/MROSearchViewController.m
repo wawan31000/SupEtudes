@@ -69,18 +69,31 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+   NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:[NSEntityDescription entityForName:@"Domaine" inManagedObjectContext:[_manager managedObjectContext]]];
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat: @"name = %@", [_domaine name]];
     [request setPredicate:predicate];
     MRODomaine * d = [[[_manager managedObjectContext]executeFetchRequest:request error:nil] firstObject];
     [[d ecoles] addObject:(MROEcole *)[_ecoles objectAtIndex:[indexPath row]]];
+
+    //ecoles in domaaine
+    //[_domaine.ecoles addObject:[_ecoles objectAtIndex:[indexPath row]]];
+    //////////////
+        
+    //[[[_ecoles objectAtIndex:[indexPath row]] domaines] addObject:_domaine];
+    
     MROInformations * e = [NSEntityDescription insertNewObjectForEntityForName:@"Informations" inManagedObjectContext:[_manager managedObjectContext]];
     [e setDomaine:_domaine];
     [[[_ecoles objectAtIndex:[indexPath row]] informations] addObject:e];
-    [_manager saveContext];
-    [[_manager managedObjectContext] save:nil];
+    //[_manager saveContext];
+    NSError *error = nil;
+    if (![_manager.managedObjectContext save:&error])
+    {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        
+    }
+    [self.navigationController popViewControllerAnimated:TRUE ];
 }
 
 

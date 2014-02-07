@@ -12,5 +12,6 @@
 @interface MRODomaine : NSObject
 @property (strong, nonatomic) NSString * name;
 @property (strong, nonatomic) NSMutableArray * ecoles;
+@property(strong,nonatomic)NSMutableArray * informations;
 - (id)initWithName:(NSString *) newname;
 @end

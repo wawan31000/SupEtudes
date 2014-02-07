@@ -1,8 +1,8 @@
 //
-//  MROModifEcoleViewController.h
+//  MROAMEcoleViewController.h
 //  SupEtudes
 //
-//  Created by Developer on 20/01/14.
+//  Created by Developer on 07/02/14.
 //  Copyright (c) 2014 Maxime Roch. All rights reserved.
 //
 
@@ -12,8 +12,7 @@
 #import "MROLieu.h"
 #import "MROEcole.h"
 
-@interface MROModifEcoleViewController : UITableViewController
-
+@interface MROAMEcoleViewController : UITableViewController
 @property (strong, nonatomic) MROCoreDataManager *manager;
 @property (strong, nonatomic) NSArray * ecoles;
 @property (strong, nonatomic) MRODomaine * domaine;

@@ -38,6 +38,18 @@
     [_EcoleTable reloadData];
 }
 
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSManagedObject *managedObject = [_ecoles objectAtIndex:[indexPath row]];
+        [[_manager managedObjectContext] deleteObject:managedObject];
+        [_manager saveContext];
+        NSFetchRequest * fr = [NSFetchRequest fetchRequestWithEntityName:@"Ecole"];
+        _ecoles = [[_manager managedObjectContext]executeFetchRequest:fr error:nil];
+        [_EcoleTable reloadData];
+    }
+}
+
 ////////////////////////////////////////////
 // Gestion Table View -- Liste des domaines
 ///////////////////////////////////////////

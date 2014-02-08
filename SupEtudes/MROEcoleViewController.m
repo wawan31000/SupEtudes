@@ -84,6 +84,16 @@
     }
 }
 
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [(NSMutableArray *)[_domaineinmanager ecoles] removeObject:[_selectedEcoles objectAtIndex:[indexPath row]]];
+        [_manager saveContext];
+        [self reloadEcole];
+        [_EcoleTable reloadData];
+    }
+}
+
 -(void)reloadEcole{
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:[NSEntityDescription entityForName:@"Domaine" inManagedObjectContext:[_manager managedObjectContext]]];

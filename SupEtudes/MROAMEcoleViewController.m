@@ -49,6 +49,7 @@
 }
 
 - (IBAction)onSaveEcole:(id)sender {
+    if([_adresse hasText] && [_ville hasText] && [_cp hasText] && [_name hasText]){
     MROLieu * l = [NSEntityDescription insertNewObjectForEntityForName:@"Lieu" inManagedObjectContext:[_manager managedObjectContext]];
     [l setAdresse:[_adresse text]];
     [l setVille:[_ville text]];
@@ -66,6 +67,10 @@
     
     NSLog(@"%@",d.lieu);
     [self.navigationController popViewControllerAnimated:true];
-    [_manager saveContext];
+        [_manager saveContext];}
+    else{
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Erreur" message:@"Veuillez saisir les champs obligatoire" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }
 }
 @end

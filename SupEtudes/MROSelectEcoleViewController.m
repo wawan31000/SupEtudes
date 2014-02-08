@@ -18,10 +18,18 @@
 {
     [super viewDidLoad];
     _manager = [MROCoreDataManager sharedManager];
+    [self setTitle:(NSString *)_ecole.name];
 	[_name setText:(NSString *)_ecole.name];
     [_tel setText:(NSString *)_ecole.tel];
     [_adresse setText:[NSString stringWithFormat:@"%@ \n%@, %@",[(MROLieu *)_ecole.lieu adresse],[(MROLieu *)_ecole.lieu cp], [(MROLieu *)_ecole.lieu ville]]];
    
+}
+
+-(void) viewWillAppear:(BOOL)animated{
+    [self setTitle:(NSString *)_ecole.name];
+    [_name setText:(NSString *)_ecole.name];
+    [_tel setText:(NSString *)_ecole.tel];
+    [_adresse setText:[NSString stringWithFormat:@"%@ \n%@, %@",[(MROLieu *)_ecole.lieu adresse],[(MROLieu *)_ecole.lieu cp], [(MROLieu *)_ecole.lieu ville]]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -30,18 +38,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)onSelect:(id)sender {
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:[NSEntityDescription entityForName:@"Domaine" inManagedObjectContext:[_manager managedObjectContext]]];
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    [(MROAMEcoleViewController *)[segue destinationViewController] setEcole:_ecole];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat: @"name = %@", [_domaine name]];
-    [request setPredicate:predicate];
-    MRODomaine * d = [[[_manager managedObjectContext]executeFetchRequest:request error:nil] firstObject];
-    [[d ecoles] addObject:_ecole];
-    [_manager saveContext];
-    [[_manager managedObjectContext] save:nil];
-    [self.navigationController popViewControllerAnimated:TRUE ];
-   
-
 }
+
 @end

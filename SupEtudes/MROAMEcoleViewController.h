@@ -14,9 +14,9 @@
 
 @interface MROAMEcoleViewController : UITableViewController
 @property (strong, nonatomic) MROCoreDataManager *manager;
-@property (strong, nonatomic) NSArray * ecoles;
 @property (strong, nonatomic) MRODomaine * domaine;
 @property(strong,nonatomic) MROLieu * lieu;
+@property(strong,nonatomic)MROEcole * ecole;
 
 @property (strong, nonatomic) IBOutlet UITextField *name;
 @property (strong, nonatomic) IBOutlet UITextField *adresse;

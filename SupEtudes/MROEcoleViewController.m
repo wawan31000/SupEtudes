@@ -18,7 +18,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"%@",[_domaine name]);
+    [self setTitle:(NSString *)_domaine.name];
     _manager = [MROCoreDataManager sharedManager];
     _selectedEcoles = [[NSMutableArray alloc]init];
     [self reloadEcole];

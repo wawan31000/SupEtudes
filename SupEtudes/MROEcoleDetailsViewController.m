@@ -18,6 +18,7 @@
 {
     [super viewDidLoad];
     _manager = [MROCoreDataManager sharedManager];
+    [self setTitle:(NSString *)_ecole.name];
 	// Do any additional setup after loading the view.
     [_name setText:(NSString *)_ecole.name];
     [_tel setText:(NSString *)_ecole.tel];

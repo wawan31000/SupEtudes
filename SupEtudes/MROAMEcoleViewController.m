@@ -27,6 +27,13 @@
 {
     [super viewDidLoad];
     _manager = [MROCoreDataManager sharedManager];
+    if(_ecole != nil){
+    [_name setText:(NSString *)_ecole.name];
+    [_tel setText:(NSString *)_ecole.tel];
+    [_adresse setText:[_ecole.lieu adresse]];
+    [_cp setText:[_ecole.lieu cp]];
+    [_ville setText:[_ecole.lieu ville]];
+    }
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -56,16 +63,18 @@
     [l setCp:[_cp text]];
     
     
+    if(_ecole == nil){
     
-    
-    MROEcole * d = [NSEntityDescription insertNewObjectForEntityForName:@"Ecole"
+    _ecole = [NSEntityDescription insertNewObjectForEntityForName:@"Ecole"
                                                  inManagedObjectContext:[_manager managedObjectContext]];
-    [d setName:[_name text]];
-    [d setTel:[_tel text]];
-    [d setLieu:l];
+    }
+    else{
+    }
+    [_ecole setName:[_name text]];
+    [_ecole setTel:[_tel text]];
+    [_ecole setLieu:l];
     
     
-    NSLog(@"%@",d.lieu);
     [self.navigationController popViewControllerAnimated:true];
         [_manager saveContext];}
     else{

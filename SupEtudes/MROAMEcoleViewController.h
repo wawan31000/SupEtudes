@@ -30,4 +30,5 @@
 - (IBAction)onTouchControl:(id)sender;
 
 - (IBAction)onSaveEcole:(id)sender;
+- (void) hideKeyboard;
 @end

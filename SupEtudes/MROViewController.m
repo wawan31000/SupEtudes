@@ -20,6 +20,17 @@
     _manager = [MROCoreDataManager sharedManager];
     NSFetchRequest * fr = [NSFetchRequest fetchRequestWithEntityName:@"Domaine"];
     _domaines = [[_manager managedObjectContext]executeFetchRequest:fr error:nil];
+    if([_domaines count] == 0)
+    {
+        MRODomaine * d = [NSEntityDescription insertNewObjectForEntityForName:@"Domaine"
+                                                       inManagedObjectContext:[_manager managedObjectContext]];
+        
+        [d setName:@"Default"];
+        [_manager saveContext];
+        NSFetchRequest * fr = [NSFetchRequest fetchRequestWithEntityName:@"Domaine"];
+        _domaines = [[_manager managedObjectContext]executeFetchRequest:fr error:nil];
+        [_DomainTable reloadData];
+    }
 }
 
 - (void)didReceiveMemoryWarning

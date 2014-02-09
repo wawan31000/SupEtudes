@@ -27,12 +27,34 @@
 {
     [super viewDidLoad];
     _manager = [MROCoreDataManager sharedManager];
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+    [self.tableView addGestureRecognizer:gestureRecognizer];
     if(_ecole != nil){
     [_name setText:(NSString *)_ecole.name];
     [_tel setText:(NSString *)_ecole.tel];
     [_adresse setText:[_ecole.lieu adresse]];
     [_cp setText:[_ecole.lieu cp]];
     [_ville setText:[_ecole.lieu ville]];
+    NSString * adressLocation = [NSString stringWithFormat:@"%@ \n%@, %@",[(MROLieu *)_ecole.lieu adresse],[(MROLieu *)_ecole.lieu cp], [(MROLieu *)_ecole.lieu ville]];
+        
+        
+        CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+        [geocoder geocodeAddressString:adressLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+            if (error) {
+                NSLog(@"%@", error);
+            } else {
+                CLPlacemark *placemark = [placemarks lastObject];
+                Location *l = [[Location alloc] initWithName:[_ecole name] address:adressLocation coordinate:placemark.location.coordinate];
+                [_Map addAnnotation:l];
+                float spanX = 0.00725;
+                float spanY = 0.00725;
+                MKCoordinateRegion region;
+                region.center.latitude = placemark.location.coordinate.latitude;
+                region.center.longitude = placemark.location.coordinate.longitude;
+                region.span = MKCoordinateSpanMake(spanX, spanY);
+                [_Map setRegion:region animated:YES];
+            }}];
+
     }
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -102,7 +124,21 @@
             region.span = MKCoordinateSpanMake(spanX, spanY);
             [_Map setRegion:region animated:YES];
         }}];
+        [_name resignFirstResponder];
+        [_adresse resignFirstResponder];
+        [_cp resignFirstResponder];
+        [_ville resignFirstResponder];
+        [_tel resignFirstResponder];
+        [self.tableView setContentOffset:CGPointMake(self.tableView.contentOffset.x, -30) animated:YES];
     }
 
+}
+
+- (void) hideKeyboard {
+    [_name resignFirstResponder];
+    [_adresse resignFirstResponder];
+    [_cp resignFirstResponder];
+    [_ville resignFirstResponder];
+    [_tel resignFirstResponder];
 }
 @end

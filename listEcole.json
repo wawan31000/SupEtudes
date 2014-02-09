@@ -1,0 +1,446 @@
+[
+  {
+    "NOM_ETABLISSEMENT":"Institut d'ingénierie informatique de Limoges",
+    "SIGLE_ETABLISSEMENT":"3IL",
+    "GPS_X":"45,8182316",
+    "GPS_Y":"1,272234"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Institut international ingénierie informatique et management",
+    "SIGLE_ETABLISSEMENT":"4IM",
+    "GPS_X":"43,3428401",
+    "GPS_Y":"5,4322143"
+  },
+  {
+    "NOM_ETABLISSEMENT":"American Business School - groupe IGS",
+    "SIGLE_ETABLISSEMENT":"ABS",
+    "GPS_X":"48,879745",
+    "GPS_Y":"2,3656"
+  },
+  {
+    "NOM_ETABLISSEMENT":"École supérieure des techniques du spectacle et de l'audiovisuel (ADAMS)",
+    "SIGLE_ETABLISSEMENT":"ADAMS",
+    "GPS_X":"44,812023",
+    "GPS_Y":"-0,543784"
+  },
+  {
+    "NOM_ETABLISSEMENT":"AIFCC Formation",
+    "SIGLE_ETABLISSEMENT":"AIFCC ",
+    "GPS_X":"49,2067864",
+    "GPS_Y":"-0,3593636"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ecole supérieure d'infographie ARIES Midi-pyrénées",
+    "SIGLE_ETABLISSEMENT":"ARIES",
+    "GPS_X":"43,6147075",
+    "GPS_Y":"1,4105964"
+  },
+  {
+    "NOM_ETABLISSEMENT":"American school of modern music",
+    "SIGLE_ETABLISSEMENT":"ASMM",
+    "GPS_X":"48,842209",
+    "GPS_Y":"2,293894"
+  },
+  {
+    "NOM_ETABLISSEMENT":"FORMASUP - CFA du Supérieur - ASSIFA",
+    "SIGLE_ETABLISSEMENT":"ASSIFA",
+    "GPS_X":"50,618929",
+    "GPS_Y":"3,1307685"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Université d'Orléans Antenne scientifique universitaire de Chartres",
+    "SIGLE_ETABLISSEMENT":"ASUC",
+    "GPS_X":"48,4359981",
+    "GPS_Y":"1,4869528"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ecole supérieure art et techniques de l'environnement publicitaire",
+    "SIGLE_ETABLISSEMENT":"ATEP",
+    "GPS_X":"48,85973",
+    "GPS_Y":"2,379065"
+  },
+  {
+    "NOM_ETABLISSEMENT":"American University of Paris",
+    "SIGLE_ETABLISSEMENT":"AUP",
+    "GPS_X":"48,858989",
+    "GPS_Y":"2,30408"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Université de Strasbourg Centre européen d'enseignement et de recherche en éthique",
+    "SIGLE_ETABLISSEMENT":"CEERE",
+    "GPS_X":"48,5767385",
+    "GPS_Y":"7,7486014"
+  },
+  {
+    "NOM_ETABLISSEMENT":"CEESO Lyon Centre européen d'enseignement supérieur de l'ostéopathie",
+    "SIGLE_ETABLISSEMENT":"CEESO Lyon",
+    "GPS_X":"45,753141",
+    "GPS_Y":"4,839996"
+  },
+  {
+    "NOM_ETABLISSEMENT":"CEESO Paris Centre européen d'enseignement supérieur de l'ostéopatie",
+    "SIGLE_ETABLISSEMENT":"CEESO Paris",
+    "GPS_X":"48,923644",
+    "GPS_Y":"2,348125"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Reims Management School programme CESEM",
+    "SIGLE_ETABLISSEMENT":"CESEM",
+    "GPS_X":"49,2381904",
+    "GPS_Y":"4,0030782"
+  },
+  {
+    "NOM_ETABLISSEMENT":"EUROMED Management programme CeseMed",
+    "SIGLE_ETABLISSEMENT":"CESEMED",
+    "GPS_X":"43,2393443",
+    "GPS_Y":"5,43768"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ecole supérieure de chimie, physique, électronique de Lyon",
+    "SIGLE_ETABLISSEMENT":"CPE Lyon",
+    "GPS_X":"45,7789354",
+    "GPS_Y":"4,8670887"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ecole supérieure de vente industrielle internationale",
+    "SIGLE_ETABLISSEMENT":"DBS",
+    "GPS_X":"50,634894",
+    "GPS_Y":"3,0606049"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ecole supérieure des services aux entreprises",
+    "SIGLE_ETABLISSEMENT":"E2SE",
+    "GPS_X":"49,2098489",
+    "GPS_Y":"-0,3682741"
+  },
+  {
+    "NOM_ETABLISSEMENT":"European Business School - Ecole européenne de management",
+    "SIGLE_ETABLISSEMENT":"EBS",
+    "GPS_X":"48,844404",
+    "GPS_Y":"2,257095"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ecole de commerce européenne - groupe INSEEC",
+    "SIGLE_ETABLISSEMENT":"ECE",
+    "GPS_X":"45,77061",
+    "GPS_Y":"4,836716"
+  },
+  {
+    "NOM_ETABLISSEMENT":"École de commerce européenne - Groupe INSEEC",
+    "SIGLE_ETABLISSEMENT":"ECE",
+    "GPS_X":"44,8542043",
+    "GPS_Y":"-0,5659277"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ecole supérieure européenne de management par alternance - ECEMA Lyon",
+    "SIGLE_ETABLISSEMENT":"ECEMA",
+    "GPS_X":"45,736771",
+    "GPS_Y":"4,836842"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ecole de commerce et de gestion d'Orléans",
+    "SIGLE_ETABLISSEMENT":"ECG",
+    "GPS_X":"47,9070968",
+    "GPS_Y":"1,8907741"
+  },
+  {
+    "NOM_ETABLISSEMENT":"European Communication School",
+    "SIGLE_ETABLISSEMENT":"ECS",
+    "GPS_X":"48,893587",
+    "GPS_Y":"2,284985"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ecole de communication visuelle - ECV Paris",
+    "SIGLE_ETABLISSEMENT":"ECV Paris",
+    "GPS_X":"48,851167",
+    "GPS_Y":"2,381809"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ecole des Avocats EDA Nord-Ouest",
+    "SIGLE_ETABLISSEMENT":"EDA ",
+    "GPS_X":"50,6197142",
+    "GPS_Y":"3,0686492"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ecole d'ingénieurs du Centre d'études supérieures industrielles",
+    "SIGLE_ETABLISSEMENT":"EI-CESI",
+    "GPS_X":"43,5489487",
+    "GPS_Y":"1,5029615"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ecole Internationale de Design - Euromed Management Toulon",
+    "SIGLE_ETABLISSEMENT":"EID",
+    "GPS_X":"43,1518028",
+    "GPS_Y":"6,0442411"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Groupe Sup de Co Montpellier programme bachelor - EIM",
+    "SIGLE_ETABLISSEMENT":"EIM",
+    "GPS_X":"43,6269471",
+    "GPS_Y":"3,8389959"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ecole internationale de marketing du Luxe (Réseau GES)",
+    "SIGLE_ETABLISSEMENT":"EIML",
+    "GPS_X":"48,8461666",
+    "GPS_Y":"2,3858775"
+  },
+  {
+    "NOM_ETABLISSEMENT":"École internationale des sciences du traitement de l'information",
+    "SIGLE_ETABLISSEMENT":"EISTI",
+    "GPS_X":"43,29621124",
+    "GPS_Y":"-0,368499011"
+  },
+  {
+    "NOM_ETABLISSEMENT":"École internationale des sciences du traitement de l'information",
+    "SIGLE_ETABLISSEMENT":"EISTI",
+    "GPS_X":"49,033832",
+    "GPS_Y":"2,072156"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ecole internationale des transports et de la logistique (groupe Promotrans)",
+    "SIGLE_ETABLISSEMENT":"EITL SUP de LOG",
+    "GPS_X":"45,744212",
+    "GPS_Y":"4,835007"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ecole des ingénieurs de la ville de Paris",
+    "SIGLE_ETABLISSEMENT":"EIVP",
+    "GPS_X":"48,879277",
+    "GPS_Y":"2,351567"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ecole d'ingénierie des sciences aérospatiales",
+    "SIGLE_ETABLISSEMENT":"ELISA",
+    "GPS_X":"49,2720014",
+    "GPS_Y":"1,2139302"
+  },
+  {
+    "NOM_ETABLISSEMENT":"ELPAC",
+    "SIGLE_ETABLISSEMENT":"ELPAC",
+    "GPS_X":"45,8323746",
+    "GPS_Y":"1,2571996"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ecole de Management de Normandie",
+    "SIGLE_ETABLISSEMENT":"EM Normandie",
+    "GPS_X":"49,2098834",
+    "GPS_Y":"-0,3567303"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ecole de Management de Normandie",
+    "SIGLE_ETABLISSEMENT":"EM Normandie",
+    "GPS_X":"49,489356",
+    "GPS_Y":"0,1035762"
+  },
+  {
+    "NOM_ETABLISSEMENT":"EMD Ecole de management",
+    "SIGLE_ETABLISSEMENT":"EMD",
+    "GPS_X":"43,2695073",
+    "GPS_Y":"5,4140234"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Arts et Métiers ParisTech (ENSAM)",
+    "SIGLE_ETABLISSEMENT":"ENSAM",
+    "GPS_X":"48,834073",
+    "GPS_Y":"2,357432"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ecole nationale supérieure d'architecture de Montpellier (Antenne de la Réunion)",
+    "SIGLE_ETABLISSEMENT":"ENSAM",
+    "GPS_X":"-20,9388883",
+    "GPS_Y":"55,2982706"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ecole nationale supérieure des arts et métiers",
+    "SIGLE_ETABLISSEMENT":"ENSAM",
+    "GPS_X":"42,663504",
+    "GPS_Y":"9,439251"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ecole nationale supérieure d'architecture de Toulouse",
+    "SIGLE_ETABLISSEMENT":"ENSAT",
+    "GPS_X":"43,578558",
+    "GPS_Y":"1,396601"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ecole nationale supérieure de chimie de Clermont-Ferrand",
+    "SIGLE_ETABLISSEMENT":"ENSCCF",
+    "GPS_X":"45,7637325",
+    "GPS_Y":"3,1169629"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ecole nationale supérieure de l'électronique et de ses applications",
+    "SIGLE_ETABLISSEMENT":"ENSEA",
+    "GPS_X":"49,039223",
+    "GPS_Y":"2,070512"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Université de Lorraine Ecole nationale supérieure des industries chimiques",
+    "SIGLE_ETABLISSEMENT":"ENSIC",
+    "GPS_X":"48,7007742",
+    "GPS_Y":"6,179664"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Université de Lorraine ENSIC Formation d'ingénieurs des techniques de l'industrie",
+    "SIGLE_ETABLISSEMENT":"ENSIC FITI",
+    "GPS_X":"48,7007742",
+    "GPS_Y":"6,179664"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ecole nationale supérieure des mines de Paris",
+    "SIGLE_ETABLISSEMENT":"ENSMP",
+    "GPS_X":"48,845574",
+    "GPS_Y":"2,339856"
+  },
+  {
+    "NOM_ETABLISSEMENT":"EPICOM",
+    "SIGLE_ETABLISSEMENT":"EPICOM",
+    "GPS_X":"43,6361987",
+    "GPS_Y":"3,9266729"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ecole pour l'informatique et les techniques avancées",
+    "SIGLE_ETABLISSEMENT":"EPITA",
+    "GPS_X":"48,815909",
+    "GPS_Y":"2,363613"
+  },
+  {
+    "NOM_ETABLISSEMENT":"École pour l'informatique et les nouvelles technologies",
+    "SIGLE_ETABLISSEMENT":"EPITECH",
+    "GPS_X":"50,6354711",
+    "GPS_Y":"3,0133367"
+  },
+  {
+    "NOM_ETABLISSEMENT":"École pour l'informatique et les nouvelles technologies",
+    "SIGLE_ETABLISSEMENT":"EPITECH",
+    "GPS_X":"45,756691",
+    "GPS_Y":"4,858808"
+  },
+  {
+    "NOM_ETABLISSEMENT":"École pour l'informatique et les nouvelles technologies",
+    "SIGLE_ETABLISSEMENT":"EPITECH ",
+    "GPS_X":"48,8153973",
+    "GPS_Y":"2,3629963"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ecole privée des sciences informatiques",
+    "SIGLE_ETABLISSEMENT":"EPSI",
+    "GPS_X":"48,891733",
+    "GPS_Y":"2,296171"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ecole privée des sciences informatiques",
+    "SIGLE_ETABLISSEMENT":"EPSI",
+    "GPS_X":"44,8438398",
+    "GPS_Y":"-0,5970144"
+  },
+  {
+    "NOM_ETABLISSEMENT":"EPSI - Ecole d'ingénierie informatique",
+    "SIGLE_ETABLISSEMENT":"EPSI",
+    "GPS_X":"45,76967",
+    "GPS_Y":"4,859124"
+  },
+  {
+    "NOM_ETABLISSEMENT":"European School of Advanced Management",
+    "SIGLE_ETABLISSEMENT":"ESAM",
+    "GPS_X":"43,6401159",
+    "GPS_Y":"1,3887662"
+  },
+  {
+    "NOM_ETABLISSEMENT":"European School of Advanced Management",
+    "SIGLE_ETABLISSEMENT":"ESAM",
+    "GPS_X":"48,879745",
+    "GPS_Y":"2,3656"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Groupe ESC Clermont programme ESC",
+    "SIGLE_ETABLISSEMENT":"ESC Clermont",
+    "GPS_X":"45,7782125",
+    "GPS_Y":"3,0902705"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ecole supérieure de génie informatique (ESGI) - Réseau GES",
+    "SIGLE_ETABLISSEMENT":"ESGI",
+    "GPS_X":"48,878121",
+    "GPS_Y":"2,38372"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ecole supérieure d'informatique électronique automatique",
+    "SIGLE_ETABLISSEMENT":"ESIEA",
+    "GPS_X":"48,085312",
+    "GPS_Y":"-0,7553712"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ecole supérieure d'ingénieur en électronique et électrotechnique",
+    "SIGLE_ETABLISSEMENT":"ESIEE Amiens",
+    "GPS_X":"49,8997059",
+    "GPS_Y":"2,2899514"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ecole des hautes études politiques",
+    "SIGLE_ETABLISSEMENT":"HEP",
+    "GPS_X":"48,8696318",
+    "GPS_Y":"2,2983568"
+  },
+  {
+    "NOM_ETABLISSEMENT":"International Business School - Campus de Toulouse",
+    "SIGLE_ETABLISSEMENT":"ICD ",
+    "GPS_X":"43,6401159",
+    "GPS_Y":"1,3887662"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ingesup Aix-en-Provence",
+    "SIGLE_ETABLISSEMENT":"INGESUP",
+    "GPS_X":"43.528462",
+    "GPS_Y":"5.431113"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ingesup Bordeaux",
+    "SIGLE_ETABLISSEMENT":"INGESUP",
+    "GPS_X":"44.854132",
+    "GPS_Y":"-0.566183"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ingesup Lyon",
+    "SIGLE_ETABLISSEMENT":"INGESUP",
+    "GPS_X":"45.757502",
+    "GPS_Y":"4.862032"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ingesup Paris",
+    "SIGLE_ETABLISSEMENT":"INGESUP",
+    "GPS_X":"48.837353",
+    "GPS_Y":"2.289439"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Ingesup Toulouse",
+    "SIGLE_ETABLISSEMENT":"INGESUP",
+    "GPS_X":"43.578708",
+    "GPS_Y":"1.496017"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Institut national des sciences appliquées de Toulouse",
+    "SIGLE_ETABLISSEMENT":"INSA Toulouse",
+    "GPS_X":"43,5723424",
+    "GPS_Y":"1,4611548"
+  },
+  {
+    "NOM_ETABLISSEMENT":"Université de Nantes Ecole polytechnique de l'université de Nantes",
+    "SIGLE_ETABLISSEMENT":"Polytech'Nantes",
+    "GPS_X":"47,2831766",
+    "GPS_Y":"-1,515887"
+  },
+  {
+    "NOM_ETABLISSEMENT":"SUP' de COM Ecole Supérieure de Communication",
+    "SIGLE_ETABLISSEMENT":"SUP' de COM",
+    "GPS_X":"43,6112701",
+    "GPS_Y":"7,0172567"
+  },
+  {
+    "NOM_ETABLISSEMENT":"SUPINFO - Ecole supérieure d'informatique de Paris",
+    "SIGLE_ETABLISSEMENT":"SUPINFO ",
+    "GPS_X":"48,881485",
+    "GPS_Y":"2,362842"
+  }
+]

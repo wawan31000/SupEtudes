@@ -12,8 +12,10 @@
 #import "MROCoreDataManager.h"
 #import "MRODomaine.h"
 #import "MROInformations.h"
+#import "Location.h"
+#import <MapKit/MapKit.h>
 
-@interface MROEcoleDetailsViewController : UIViewController
+@interface MROEcoleDetailsViewController : UIViewController<MKMapViewDelegate>
 @property(strong,nonatomic) MROCoreDataManager* manager;
 @property(strong,nonatomic) MROEcole * ecole;
 @property (strong, nonatomic) IBOutlet UILabel *name;
@@ -24,5 +26,7 @@
 @property(strong,nonatomic) MROInformations * information;
 @property(strong,nonatomic) MRODomaine * domaine;
 @property (strong, nonatomic) IBOutlet UITableView *InformationTable;
+@property (strong, nonatomic) IBOutlet MKMapView *Map;
+@property (strong, nonatomic) NSMutableDictionary *placeDictionary;
 -(void)reloadInformation;
 @end

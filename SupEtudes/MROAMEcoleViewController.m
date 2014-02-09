@@ -82,4 +82,27 @@
         [alert show];
     }
 }
+- (IBAction)onVerifAdress:(id)sender {
+    if([_adresse hasText] && [_ville hasText] && [_cp hasText] && [_name hasText]){
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    NSString * adresseLoc = [NSString stringWithFormat:@"%@ \n%@, %@",[_adresse text],[_cp text], [_ville text]];
+    [geocoder geocodeAddressString:adresseLoc completionHandler:^(NSArray *placemarks, NSError *error) {
+        if (error) {
+            NSLog(@"%@", error);
+        } else {
+            CLPlacemark *placemark = [placemarks lastObject];
+            
+            Location *l = [[Location alloc] initWithName:[_name text] address:adresseLoc coordinate:placemark.location.coordinate];
+            [_Map addAnnotation:l];
+            float spanX = 0.00725;
+            float spanY = 0.00725;
+            MKCoordinateRegion region;
+            region.center.latitude = placemark.location.coordinate.latitude;
+            region.center.longitude = placemark.location.coordinate.longitude;
+            region.span = MKCoordinateSpanMake(spanX, spanY);
+            [_Map setRegion:region animated:YES];
+        }}];
+    }
+
+}
 @end

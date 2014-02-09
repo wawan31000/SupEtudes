@@ -11,12 +11,16 @@
 #import "MRODomaine.h"
 #import "MROLieu.h"
 #import "MROEcole.h"
+#import <MapKit/MapKit.h>
+#import "Location.h"
 
-@interface MROAMEcoleViewController : UITableViewController
+@interface MROAMEcoleViewController : UITableViewController<MKMapViewDelegate>
 @property (strong, nonatomic) MROCoreDataManager *manager;
 @property (strong, nonatomic) MRODomaine * domaine;
 @property(strong,nonatomic) MROLieu * lieu;
 @property(strong,nonatomic)MROEcole * ecole;
+@property (strong, nonatomic) IBOutlet MKMapView *Map;
+- (IBAction)onVerifAdress:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UITextField *name;
 @property (strong, nonatomic) IBOutlet UITextField *adresse;

@@ -61,6 +61,7 @@
 
     
     cell.textLabel.text = [(MROEcole *)[_selectedEcoles objectAtIndex:[indexPath row]] name];
+    cell.detailTextLabel.text = [(MROLieu *)[(MROEcole *)[_selectedEcoles objectAtIndex:[indexPath row]] lieu] ville];
     //cell.textLabel.text = @"test";
     return cell;
     

@@ -612,6 +612,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="EcoleTable" destination="oUh-YF-Fy2" id="pUr-Ub-2t8"/>
                         <outlet property="Map" destination="0Dk-It-uPI" id="XXP-eB-ytx"/>
                         <outlet property="adresse" destination="S2B-sm-M5A" id="Zdh-a9-xCc"/>
                         <outlet property="cp" destination="8LD-nK-R5Z" id="ZKR-5V-VFz"/>

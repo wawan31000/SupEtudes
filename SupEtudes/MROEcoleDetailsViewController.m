@@ -18,10 +18,13 @@
 {
     [super viewDidLoad];
     _manager = [MROCoreDataManager sharedManager];
+    
+    //Affichage des informations d'une école
     [self setTitle:(NSString *)_ecole.name];
-	// Do any additional setup after loading the view.
     [_name setText:(NSString *)_ecole.name];
     [_tel setText:(NSString *)_ecole.tel];
+    
+    //Affichage des informations d'une école en fonction de son domaine
     for (MROInformations * info in _ecole.informations) {
        if(info.domaine == _domaine)
        {
@@ -32,6 +35,7 @@
     
     [self reloadInformation];
     
+    //Localisation de l'école en fonction de son adresse
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     [geocoder geocodeAddressString:[_adresse text] completionHandler:^(NSArray *placemarks, NSError *error) {
         if (error) {
@@ -57,13 +61,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+//Recharger les données quand la vue apparait
 -(void)viewWillAppear:(BOOL)animated{
     [self reloadInformation];
     [_InformationTable reloadData];
 }
 
 ////////////////////////////////////////////
-// Gestion Table View -- Liste des domaines
+// Gestion Table View -- Liste des informations
 ///////////////////////////////////////////
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 2;
@@ -123,6 +129,7 @@
     [(MROModifEcoleDetailsViewController *)segue.destinationViewController setInformation:_information];
 }
 
+//Recharge les données concernant les informations d'une école
 -(void)reloadInformation{
     NSFetchRequest *requesta = [[NSFetchRequest alloc] init];
     [requesta setEntity:[NSEntityDescription entityForName:@"Avantages" inManagedObjectContext:[_manager managedObjectContext]]];

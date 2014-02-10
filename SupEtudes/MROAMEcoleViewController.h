@@ -15,6 +15,7 @@
 #import "Location.h"
 
 @interface MROAMEcoleViewController : UITableViewController<MKMapViewDelegate>
+@property (strong, nonatomic) IBOutlet UITableView *EcoleTable;
 @property (strong, nonatomic) MROCoreDataManager *manager;
 @property (strong, nonatomic) MRODomaine * domaine;
 @property(strong,nonatomic) MROLieu * lieu;

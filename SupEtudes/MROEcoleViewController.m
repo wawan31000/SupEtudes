@@ -14,7 +14,7 @@
 
 @implementation MROEcoleViewController
 
-
+//Affichage des écoles en fonction du domaine
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -22,25 +22,22 @@
     _manager = [MROCoreDataManager sharedManager];
     _selectedEcoles = [[NSMutableArray alloc]init];
     [self reloadEcole];
-	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
     
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    //[_manager saveContext];
     _selectedEcoles = [[NSMutableArray alloc]init];
     [self reloadEcole];
 }
 
 
 ////////////////////////////////////////////
-// Gestion Table View -- Liste des domaines
+// Gestion Table View -- Liste des écoles
 ///////////////////////////////////////////
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -76,6 +73,7 @@
 
 /////////////////////////////////////
 
+//Double segue -- Condition en fonction du segue appelé
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"Search"])
        [(MROSearchViewController *)[segue destinationViewController] setDomaine:_domaine];
@@ -85,6 +83,9 @@
     }
 }
 
+   -(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath { return @"Supprimer"; }
+
+//Supression d'une école dans un domaine
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -95,6 +96,8 @@
     }
 }
 
+
+//Chargement des écoles dans un domaine dans un array pour affichage dans la tableView
 -(void)reloadEcole{
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:[NSEntityDescription entityForName:@"Domaine" inManagedObjectContext:[_manager managedObjectContext]]];
@@ -105,23 +108,7 @@
     NSLog(@"%d",[[_domaineinmanager ecoles] count]) ;
     NSSet * a = [[_domaineinmanager ecoles] copy];
     _selectedEcoles = a.allObjects;
-    //_selectedEcoles = (NSArray *)[_domaineinmanager ecoles];
-    
-    
-    /*NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:[NSEntityDescription entityForName:@"Ecole" inManagedObjectContext:[_manager managedObjectContext]]];
-    
-    
-    _ecoles = [[_manager managedObjectContext]executeFetchRequest:request error:nil];
-    NSLog(@"%@",[(MROEcole *)[_ecoles objectAtIndex:0] domaines]);
-    for (MROEcole * ecole in _ecoles) {
-        if([(NSMutableArray *)ecole.domaines containsObject:_domaine])
-        {
-            [_selectedEcoles addObject:ecole];
-        }
-    }*/
-    
-   // NSLog(@"%@",_selectedEcoles);
+
     [_EcoleTable reloadData];
 
 }

@@ -14,6 +14,8 @@
 
 @implementation MROViewController
 
+
+//Affichage des domaines  ou  ajout d'un domaine par défaut si aucun domaine
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -39,6 +41,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 -(void)viewWillAppear:(BOOL)animated
 {
     NSFetchRequest * fr = [NSFetchRequest fetchRequestWithEntityName:@"Domaine"];
@@ -47,6 +50,7 @@
     [_DomainTable reloadData];
 }
 
+//Lancement d'une AlertView permettant d'enregistrer un nouveau domaine
 - (IBAction)addDomain:(id)sender {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Nouveau Domaine" message:@"Saisir le nom du domaine:" delegate:self cancelButtonTitle:@"Annuler"
         otherButtonTitles:@"Enregistrer", nil];
@@ -54,9 +58,15 @@
     [alert show];
 }
 
+
+//Validation de l'alertView -- Ajout du domaine dans core data // Sécurisation du NSString envoyé
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if(buttonIndex == 1)
     {
+        NSString * field = [[[alertView textFieldAtIndex:0] text] stringByReplacingOccurrencesOfString:@" " withString:@""];
+        
+        if(![field isEqualToString:@""])
+        {
         MRODomaine * d = [NSEntityDescription insertNewObjectForEntityForName:@"Domaine"
                                                        inManagedObjectContext:[_manager managedObjectContext]];
         
@@ -65,7 +75,11 @@
         NSFetchRequest * fr = [NSFetchRequest fetchRequestWithEntityName:@"Domaine"];
         _domaines = [[_manager managedObjectContext]executeFetchRequest:fr error:nil];
         [_DomainTable reloadData];
-        
+        }
+        else{
+            UIAlertView * alertError = [[UIAlertView alloc] initWithTitle:@"Erreur" message:@"Saisir le champ" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] ;
+            [alertError show];
+        }
     }
 }
 
@@ -103,8 +117,12 @@
     return YES;
 }
 
+   -(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath { return @"Supprimer"; }
+
+//Suppression d'un domaine
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+ 
     if (editingStyle == UITableViewCellEditingStyleDelete) {
        NSManagedObject *managedObject = [_domaines objectAtIndex:[indexPath row]];
         [[_manager managedObjectContext] deleteObject:managedObject];

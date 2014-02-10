@@ -20,6 +20,7 @@
     [super viewDidLoad];
 	_manager = [MROCoreDataManager sharedManager];
 
+    //Affichage de toutes les écoles par défaut
     NSFetchRequest * fr = [NSFetchRequest fetchRequestWithEntityName:@"Ecole"];
     _ecoles = [[_manager managedObjectContext]executeFetchRequest:fr error:nil];
 
@@ -31,6 +32,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+//Vider bar de recherche / Recharger les informations par défaut
 -(void)viewWillAppear:(BOOL)animated{
     [_SearchBar setText:@""];
     NSFetchRequest * fr = [NSFetchRequest fetchRequestWithEntityName:@"Ecole"];
@@ -38,6 +40,7 @@
     [_EcoleTable reloadData];
 }
 
+//Thread permettant d'ajouter les écoles du fichier JSON sans freezer l'appli (Si aucune école ajoutée)
 -(void)viewDidAppear:(BOOL)animated{
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
                                              (unsigned long)NULL), ^(void) {
@@ -47,6 +50,10 @@
     });
 
 }
+
+//Suppresion d'une école
+
+   -(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath { return @"Supprimer"; }
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -61,7 +68,7 @@
 }
 
 ////////////////////////////////////////////
-// Gestion Table View -- Liste des domaines
+// Gestion Table View -- Liste des écoles
 ///////////////////////////////////////////
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -91,6 +98,7 @@
     //[self performSegueWithIdentifier:@"SelectEcole" sender:self];
 }
 
+// Ajout d'une école dans un domaine et création d'un objet informations lié entre le domaine et l'école
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
    NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:[NSEntityDescription entityForName:@"Domaine" inManagedObjectContext:[_manager managedObjectContext]]];
@@ -99,17 +107,11 @@
     [request setPredicate:predicate];
     MRODomaine * d = [[[_manager managedObjectContext]executeFetchRequest:request error:nil] firstObject];
     [[d ecoles] addObject:(MROEcole *)[_ecoles objectAtIndex:[indexPath row]]];
-
-    //ecoles in domaaine
-    //[_domaine.ecoles addObject:[_ecoles objectAtIndex:[indexPath row]]];
-    //////////////
-        
-    //[[[_ecoles objectAtIndex:[indexPath row]] domaines] addObject:_domaine];
     
     MROInformations * e = [NSEntityDescription insertNewObjectForEntityForName:@"Informations" inManagedObjectContext:[_manager managedObjectContext]];
     [e setDomaine:_domaine];
     [[[_ecoles objectAtIndex:[indexPath row]] informations] addObject:e];
-    //[_manager saveContext];
+    [_manager saveContext];
     NSError *error = nil;
     if (![_manager.managedObjectContext save:&error])
     {
@@ -123,6 +125,7 @@
 
 /////////////////////////////////////
 
+//Passage a d'autre viewController // Condition correspondant au segue appelé
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"SelectEcole"]){
         [(MROSelectEcoleViewController *)[segue destinationViewController] setEcole:(MROEcole *)[_ecoles objectAtIndex:[[self.EcoleTable indexPathForCell:sender] row]]];
@@ -130,7 +133,10 @@
     }
 }
 
+//Récuperation du JSON et enregistrement des écoles
 -(void)fetchJson{
+    
+    //Récupération du fichier JSON en local
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"listEcole" ofType:@"json"];
     NSString *myJSON = [[NSString alloc] initWithContentsOfFile:filePath encoding:nil error:NULL];
     if (!myJSON) {
@@ -142,25 +148,31 @@
     
     for (NSDictionary *ecole in json)
     {
+        
+        //Transformation des données de coordonnées en adresse via l'API Google Maps
         NSString * gpsx =[[ecole objectForKey:@"GPS_X"] stringByReplacingOccurrencesOfString:@"," withString:@"."];
         NSString * gpsy =[[ecole objectForKey:@"GPS_Y"] stringByReplacingOccurrencesOfString:@"," withString:@"."];
         
         NSString *urlAsString = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?latlng=%@,%@&sensor=false", gpsx,gpsy];
         NSURL *url = [[NSURL alloc] initWithString:urlAsString];
         
+        //Formatage du JSON de l'API Google Maps et récupération des données nécessaires
         NSString * jsonMap = [[NSString alloc]initWithContentsOfURL:url encoding:NSUTF8StringEncoding error:NULL];
         NSDictionary *jsonMapEncode = [jsonMap JSONValue];
-        //NSLog(@"%lu",(unsigned long)[[jsonMapEncode objectForKey:@"results"] count]);
-        //NSArray * formatadress = [[jsonMapEncode objectForKey:@"results"] objectForKey:@"formatted_address"];
+
         NSString * formatedadress;
         NSDictionary *result = [jsonMapEncode objectForKey:@"results"];
         for (NSDictionary *t in result) {
             formatedadress = [t objectForKey:@"formatted_address"];
+            
+            //Récupération de l'adresse en fonction d'un adresse formatée // Split permettant de récuperer les bonnes informations dans la donnée en NSString
             NSArray * address = [formatedadress componentsSeparatedByString:@","];
             NSString * adresseText = [address objectAtIndex:0];
             NSArray * villecp = [[address objectAtIndex:1] componentsSeparatedByString:@" "];
             NSString * cpText = [villecp objectAtIndex:1];
             NSString * villeText;
+            
+            //Récupération du nom de la ville pouvant posséder des espaces
             if([villecp count]>=3)
             {
             villeText =[villecp objectAtIndex:2];
@@ -170,6 +182,8 @@
             }
                 }
             }
+            
+            //Thread permettant l'ajout des écoles dans le core data
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
                                                      (unsigned long)NULL), ^(void) {
                 [self SaveEcoleInManagedContext:[ecole objectForKey:@"SIGLE_ETABLISSEMENT"] adresse:adresseText cp:cpText ville:villeText];
@@ -183,6 +197,7 @@
        }
 }
 
+//Sauvegarde d'une école dans le core data + Reload des données dans la tableView
 -(void)SaveEcoleInManagedContext:(NSString *)nom adresse:(NSString *)adress cp:(NSString *)cp ville:(NSString *)ville{
         MROLieu * l = [NSEntityDescription insertNewObjectForEntityForName:@"Lieu" inManagedObjectContext:[_manager managedObjectContext]];
         [l setAdresse:adress];
@@ -206,6 +221,7 @@
     [_SearchBar resignFirstResponder];
 }
 
+// Requete des écoles en fonction du texte envoyé via la barre de recherche + Reload
 - (IBAction)onSearch:(UITextField *)sender {
     
     NSFetchRequest * fr = [NSFetchRequest fetchRequestWithEntityName:@"Ecole"];

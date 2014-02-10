@@ -52,7 +52,7 @@
     }
 }
 
-
+// Affiche les avantages & inconvénients pour l'école
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -75,6 +75,7 @@
     
 }
 
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     NSInteger nbRows = 0;
     if(section == 0) nbRows = [_avantages count];
@@ -87,6 +88,8 @@
     NSLog(@"%d",indexPath.row);
 }
 
+
+//Affichage d'une alertview custom affichant un champ texte et un picker pour l'ajout d'information
 - (IBAction)AddInformation:(id)sender {
     CustomIOS7AlertView * alertView = [[CustomIOS7AlertView alloc]init];
     UIView * view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 300, 200)];
@@ -132,9 +135,11 @@
     _pwSelectedIndex = &row;
 }
 
+//Ajout de l'information (onClick) dans le core data
 -(void)customIOS7dialogButtonTouchUpInside:(id)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     
     if(buttonIndex == 1){
+        if(![[[_infoName text] stringByReplacingOccurrencesOfString:@" " withString:@""] isEqualToString:@""]){
         if([_pw selectedRowInComponent:0] == 0){
             MROAvantages * er = [NSEntityDescription insertNewObjectForEntityForName:@"Avantages" inManagedObjectContext:[_manager managedObjectContext]];
             [er setName:_infoName.text];
@@ -151,10 +156,20 @@
         [_manager.managedObjectContext save:nil];
         [self reloadInformation];
         [_InformationTable reloadData];
+        }
+        else
+        {
+                UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Erreur" message:@"Veuillez saisir les champs obligatoire" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alert show];
+        }
     }
     [alertView close];
 }
 
+   -(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath { return @"Supprimer"; }
+
+
+//Supprimer une information
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         if(indexPath.section == 0){
@@ -173,6 +188,7 @@
 }
 
 
+// Requete sur core data pour récuperer les informations
 -(void)reloadInformation{
     NSFetchRequest *requesta = [[NSFetchRequest alloc] init];
     [requesta setEntity:[NSEntityDescription entityForName:@"Avantages" inManagedObjectContext:[_manager managedObjectContext]]];

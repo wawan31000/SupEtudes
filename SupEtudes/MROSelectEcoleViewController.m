@@ -18,12 +18,14 @@
 {
     [super viewDidLoad];
     _manager = [MROCoreDataManager sharedManager];
+    
+    //Affiche les données de l'école sur les label en question
     [self setTitle:(NSString *)_ecole.name];
 	[_name setText:(NSString *)_ecole.name];
     [_tel setText:(NSString *)_ecole.tel];
     [_adresse setText:[NSString stringWithFormat:@"%@ \n%@, %@",[(MROLieu *)_ecole.lieu adresse],[(MROLieu *)_ecole.lieu cp], [(MROLieu *)_ecole.lieu ville]]];
     
-    
+    //Place un marqueur qui localise l'école en fonction de son adresse
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     [geocoder geocodeAddressString:[_adresse text] completionHandler:^(NSArray *placemarks, NSError *error) {
         if (error) {
@@ -42,6 +44,8 @@
         }}];
 }
 
+
+//Suite à la modification, retour de segue, réaffiche les bonnes informations de l'école
 -(void) viewWillAppear:(BOOL)animated{
     [self setTitle:(NSString *)_ecole.name];
     [_name setText:(NSString *)_ecole.name];
@@ -73,6 +77,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+//Passage de l'école pour modification
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     [(MROAMEcoleViewController *)[segue destinationViewController] setEcole:_ecole];
     
